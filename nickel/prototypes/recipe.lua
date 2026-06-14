@@ -31,7 +31,7 @@ for k, v in pairs(data.raw["technology"]) do
 end
 data.raw.recipe["iron-stick"].enabled = true
 
-if parts.experimental then
+if parts.nickelExperimental then
   data:extend({
     {
       type = "recipe",
@@ -82,7 +82,7 @@ if parts.experimental then
         category = "crafting",
         energy_required = 2,
         enabled = false,
-        icon = "__IfNickel-Updated__/graphics/icons/gimbaled-thruster-packed.png",
+        icon = "__Ultimate_Intermediates__/graphics/icons/gimbaled-thruster-packed.png",
         icon_size = 64,
         subgroup = "ll-packed-rocket-ingredients",
         localised_name = {"recipe-name.pack-gimbaled-thruster"},
@@ -96,7 +96,7 @@ if parts.experimental then
         category = "crafting",
         energy_required = 2,
         enabled = false,
-        icon = "__IfNickel-Updated__/graphics/icons/gimbaled-thruster-packed.png",
+        icon = "__Ultimate_Intermediates__/graphics/icons/gimbaled-thruster-packed.png",
         icon_size = 64,
         subgroup = "ll-packed-rocket-ingredients",
         localised_name = {"recipe-name.unpack-gimbaled-thruster"},
@@ -157,7 +157,7 @@ if parts.experimental then
         category = "advanced-crafting",
         icons = {
           {
-            icon = "__IfNickel-Updated__/graphics/icons/flow-controller.png",
+            icon = "__Ultimate_Intermediates__/graphics/icons/flow-controller.png",
             icon_size = 64
           },
           {
@@ -181,7 +181,7 @@ if parts.experimental then
         category = "advanced-crafting",
         icons = {
           {
-            icon = "__IfNickel-Updated__/graphics/icons/advanced-flow-controller.png",
+            icon = "__Ultimate_Intermediates__/graphics/icons/advanced-flow-controller.png",
             icon_size = 64
           },
           {
@@ -236,7 +236,7 @@ if parts.nitinol then
       category = "advanced-crafting",
       icons = {
         {
-          icon = "__IfNickel-Updated__/graphics/icons/nitinol-mesh.png",
+          icon = "__Ultimate_Intermediates__/graphics/icons/nitinol-mesh.png",
           icon_size = 64
         },
         {

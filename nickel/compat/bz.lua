@@ -9,7 +9,7 @@ if parts.bz.gas then
   rm.AddIngredient("gas-extractor", parts.motor, 1)
 end
 
-if parts.bz.tin and parts.experimental then
+if parts.bz.tin and parts.nickelExperimental then
   rm.AddIngredient("cooling-fan", "solder", 1)
   --these use significantly more solder than cooling fans. however cooling fans are used for a lot of other things in high demand (blue circuits)
   rm.RemoveIngredient("roboport", "solder", 20)
@@ -29,7 +29,7 @@ if parts.bz.tin and parts.experimental then
   end
 end
 
-if parts.bz.tungsten and parts.experimental then
+if parts.bz.tungsten and parts.nickelExperimental then
   tf.addPrereq("gimbaled-thruster", "rocketry")
 end
 
@@ -52,7 +52,7 @@ if parts.bz.gold then
 
   if mods["ThemTharHills-Updated"] or not mods["space-exploration"] then
     --TTH handles allowing small amounts of gold/plat/pall on nauvis
-    if parts.experimental then
+    if parts.nickelExperimental then
       if rm.CheckIngredient("mainboard", "temperature-sensor") then
         tf.removePrereq("processing-unit", "temperature-regulation")
         tf.removePrereq("injection-molding", "chemical-science-pack")
@@ -99,7 +99,7 @@ if parts.bz.gold then
     else
       motor2.icons = {
         {
-            icon = "__IfNickel-Updated__/graphics/icons/motor.png",
+            icon = "__Ultimate_Intermediates__/graphics/icons/motor.png",
             icon_size = 64
           },
           {

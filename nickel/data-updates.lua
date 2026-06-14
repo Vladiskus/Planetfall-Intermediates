@@ -2,7 +2,7 @@ local rm = require("recipe-modify")
 local tf = require("techfuncs")
 local parts = require("variable-parts")
 
-if parts.experimental then
+if parts.nickelExperimental then
 
   tf.removePrereq("processing-unit", "chemical-science-pack")
   tf.addPrereq("processing-unit", "injection-molding")
@@ -277,9 +277,7 @@ if parts.aai then
   rm.RemoveIngredient("electric-motor", "aluminum-plate", 99)
 end
 
-tf.addPrereq("valves", "steel-processing")
-
-if mods["MoreScience"] and parts.experimental then
+if mods["MoreScience"] and parts.nickelExperimental then
   tf.addPrereq("injection-molding", "electric-power-science-pack")
   tf.addSciencePack("injection-molding", "electric-power-science-pack")
   tf.addSciencePack("injection-molding", "advanced-automation-science-pack")
@@ -301,7 +299,7 @@ end
 if mods["Flow Control"] then
   --tf.addPrereq("flow_control_valves_tech", "valves")
   rm.ReplaceIngredient("check-valve", "iron-gear-wheel", "invar-valve", 1)
-  if parts.experimental then
+  if parts.nickelExperimental then
     rm.ReplaceIngredient("overflow-valve", "iron-gear-wheel", "flow-controller", 1)
     rm.ReplaceIngredient("underflow-valve", "iron-gear-wheel", "flow-controller", 1)
     rm.RemoveIngredient("overflow-valve", "electronic-circuit", 1)
@@ -320,7 +318,7 @@ if mods["LunarLandings"] then
     rm.AddIngredient("ll-telescope", "motor", 10)
   end
 
-  if parts.experimental then
+  if parts.nickelExperimental then
     rm.AddIngredient("rocket-part", "gimbaled-thruster", 2)
     rm.AddIngredient("rocket-part-luna", "gimbaled-thruster", 1)
     rm.AddIngredient("rocket-part-interstellar", "gimbaled-thruster", 5)

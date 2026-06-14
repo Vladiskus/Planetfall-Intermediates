@@ -13,9 +13,9 @@ parts.bz.gas = mods["bzgas"] or mods["bzgas2"]
 parts.bz.chlorine = mods["bzchlorine"] or mods["bzchlorine2"]
 parts.bz.tungsten = mods["bztungsten"] or mods["bztungsten2"]
 
-parts.experimental = true
+parts.nickelExperimental = true
 parts.zinc = mods["BrassTacks-Updated"]
-parts.brassExperiment = true
+parts.brassExperiment = false
 parts.aai = true
 parts.motor = "electric-motor"
 

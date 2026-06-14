@@ -5,13 +5,13 @@ local parts = require("variable-parts")
 if mods["advanced-chemical-plant"] and not mods["Krastorio2"] then
   if mods["space-exploration"] then
     rm.AddIngredient("kr-advanced-chemical-plant", "bioscrubber", 4) --they use valves/flowcontrollers and also why tf not
-    if parts.experimental then
+    if parts.nickelExperimental then
       rm.AddIngredient("kr-advanced-chemical-plant", "advanced-flow-controller", 8)
     else
       rm.AddIngredient("kr-advanced-chemical-plant", "invar-valve", 32)
     end
   else
-    if parts.experimental then
+    if parts.nickelExperimental then
       rm.AddIngredient("kr-advanced-chemical-plant", "flow-controller", 32)
     else
       rm.AddIngredient("kr-advanced-chemical-plant", "invar-valve", 32)
@@ -24,13 +24,13 @@ end
 
 if mods["AdvancedAssemblyMachineStandalone"] and not mods["Krastorio2"] then
   rm.RemoveIngredient("assembling-machine-3", "electric-engine-unit", 99999) -- :O
-  if parts.experimental then
+  if parts.nickelExperimental then
     rm.AddIngredient("kr-advanced-assembling-machine", "cooling-fan", 6)
   end
 end
 
 if mods["Krastorio2"] then
-  if parts.experimental then
+  if parts.nickelExperimental then
     if not mods["space-exploration"] then
       --unreasonable for something that can only be placed in space
       rm.AddIngredient("kr-research-server", "cooling-fan", 10)
@@ -112,7 +112,7 @@ if mods["FluidMustFlow"] then
     rm.AddIngredient("non-return-duct", "invar-valve", 2)
   end
 
-  if parts.experimental then
+  if parts.nickelExperimental then
     if mods["space-exploration"] then
       tf.addPrereq("ducts", "advanced-flow-controller")
 

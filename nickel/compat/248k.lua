@@ -5,7 +5,7 @@ local cu = require("category-utils")
 
 if mods["248k-Redux"] then
   --electronic era
-  if parts.experimental then
+  if parts.nickelExperimental then
     rm.ReplaceIngredient("fu_burner", "electronic-circuit", "flow-controller", 5)
     rm.ReplaceIngredient("el_grower", "iron-gear-wheel", "invar-valve", 10)
     rm.RemoveIngredient("el_grower", "electronic-circuit", 10)
@@ -34,7 +34,7 @@ if mods["248k-Redux"] then
 
   rm.ReplaceIngredient("el_water_generator", "electronic-circuit", parts.motor, 20)
 
-  if parts.experimental then
+  if parts.nickelExperimental then
     rm.RemoveIngredient("fi_crafter", "iron-gear-wheel", 10)
     rm.AddIngredient("fi_crafter", "machining-tool", 2)
     if mods["space-exploration"] then
@@ -66,7 +66,7 @@ if mods["248k-Redux"] then
     end
   end
 
-  if parts.experimental then
+  if parts.nickelExperimental then
     if mods["space-exploration"] then
       if parts.bz.titanium then
         rm.AddIngredient("fu_turbine", "self-regulating-valve", 20)

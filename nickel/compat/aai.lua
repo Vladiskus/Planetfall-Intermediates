@@ -4,13 +4,13 @@ local parts = require("variable-parts")
 local cu = require("category-utils")
 
 if mods["aai-industry"] then
-  if parts.experimental then
+  if parts.nickelExperimental then
     rm.AddIngredient("area-mining-drill", "motorized-articulator", 10)
   end
 end
 
 if mods["big-mining-drill"] then
-  if parts.experimental then
+  if parts.nickelExperimental then
     rm.AddIngredient("big-mining-drill", "motorized-articulator", 10)
   end
 end
@@ -22,7 +22,7 @@ if mods["aai-containers"] then
   --rm.AddIngredient("aai-strongbox-requester", parts.motor, 2, 2)
   --rm.AddIngredient("aai-strongbox-buffer", parts.motor, 2, 2)
 
-  if parts.experimental then
+  if parts.nickelExperimental then
     rm.AddIngredient("aai-storehouse-passive-provider", "motorized-articulator", 2)
     --rm.AddIngredient("aai-storehouse-active-provider", "motorized-articulator", 2)
     --rm.AddIngredient("aai-storehouse-storage", "motorized-articulator", 2)
@@ -36,7 +36,7 @@ if mods["aai-containers"] then
     --rm.AddIngredient("aai-storehouse-buffer", parts.motor, 5, 5)
   end
 
-  if parts.experimental then
+  if parts.nickelExperimental then
     rm.AddIngredient("aai-warehouse-passive-provider", "motorized-articulator", 5)
     --rm.AddIngredient("aai-warehouse-active-provider", "motorized-articulator", 5)
     --rm.AddIngredient("aai-warehouse-storage", "motorized-articulator", 5)
@@ -52,7 +52,7 @@ if mods["aai-containers"] then
 end
 
 if mods["aai-signal-transmission"] then
-  if parts.experimental then
+  if parts.nickelExperimental then
     if parts.brassExperiment then
       --unnecessary. big motor and gyro already need plenty nickel.
 
@@ -68,7 +68,7 @@ end
 
 if mods["jetpack"] then
   rm.AddIngredient("jetpack-2", "invar-valve", 20)
-  if parts.experimental then
+  if parts.nickelExperimental then
     rm.AddIngredient("jetpack-3", "gimbaled-thruster", 30)
     tf.addPrereq("jetpack-3", "gimbaled-thruster")
   else
@@ -78,7 +78,7 @@ end
 
 if mods["space-exploration"] then
 
-  if parts.experimental then
+  if parts.nickelExperimental then
 
     if rm.CheckIngredient("electric-engine-unit", "bronze-plate") or rm.CheckIngredient("electric-engine-unit", "bearing") then
       --limit ingredients to 4, we need a lot of these

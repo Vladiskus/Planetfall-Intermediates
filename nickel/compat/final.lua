@@ -4,7 +4,7 @@ local parts = require("variable-parts")
 local cu = require("category-utils")
 
 if mods["space-exploration"] then
-  if parts.experimental then
+  if parts.nickelExperimental then
     if mods["Krastorio2"] then
       rm.AddIngredient("se-processing-unit-holmium", "cooling-fan", 2)
     else
@@ -54,7 +54,7 @@ if mods["Krastorio2"] then
     rm.RemoveIngredient("chemical-science-pack", "sulfuric-acid", 50)
     rm.ReplaceIngredient("chemical-science-pack", mods["Krastorio2"] and "kr-glass" or "glass", "battery", 5)
   elseif not mods["space-exploration"] then
-      if rm.CheckIngredient("utility-science-pack", "rocket-fuel") and parts.experimental then
+      if rm.CheckIngredient("utility-science-pack", "rocket-fuel") and parts.nickelExperimental then
         rm.AddIngredient("utility-science-pack", "complex-joint", 5)
       end
     end
@@ -64,12 +64,12 @@ if mods["Krastorio2"] then
   end
 end
 
-if parts.experimental and parts.brassExperiment then
+if parts.nickelExperimental and parts.brassExperiment then
   rm.RemoveIngredient("assembling-machine-3", "steel-plate", 8)
 end
 
 if not mods["BrassTacks-Updated"] then
-  if mods["Krastorio2"] or parts.experimental then
+  if mods["Krastorio2"] or parts.nickelExperimental then
     cu.moveItem("articulated-mechanism", "articulated-components", "a")
     cu.moveItem("kr-inserter-parts", "articulated-components", "b")
     cu.moveItem("kr-automation-core", "articulated-components", "c")
@@ -85,7 +85,7 @@ if not mods["BrassTacks-Updated"] then
     cu.moveItem("gimbaled-thruster", "rocket-part", "p")
   end
 
-  if data.raw.recipe["airtight-seal"] or parts.experimental then
+  if data.raw.recipe["airtight-seal"] or parts.nickelExperimental then
     cu.moveItem("empty-barrel", "plumbing-components", "a")
     cu.moveRecipe("empty-barrel", "plumbing-components", "a")
     cu.moveItem("bolted-flange", "plumbing-components", "b")
@@ -113,7 +113,7 @@ cu.moveItem("electric-motor", "engine-components", "b")
 cu.moveItem("electric-motor-silver", "engine-components", "ba")
 cu.moveItem("spark-plug", "engine-components", "c")
 cu.moveRecipe("spark-plug", "engine-components", "c")
-if (mods["BrassTacks-Updated"] and not parts.experimental) or not mods["BrassTacks-Updated"] then
+if (mods["BrassTacks-Updated"] and not parts.nickelExperimental) or not mods["BrassTacks-Updated"] then
   cu.moveItem("drive-belt", "engine-components", "d")
 end
 cu.moveItem("engine-unit", "engine-components", "e")

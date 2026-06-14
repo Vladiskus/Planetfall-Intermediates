@@ -5,7 +5,7 @@ data:extend({
   {
     type = "technology",
     name = "valves",
-    icon = "__IfNickel-Updated__/graphics/tech/valves.png",
+    icon = "__Ultimate_Intermediates__/graphics/tech/valves.png",
     icon_size = 256, icon_mipmaps = 4,
     effects =
     {
@@ -13,12 +13,12 @@ data:extend({
         type = "unlock-recipe",
         recipe = "invar-valve"
       },
-      parts.experimental and {
+      parts.nickelExperimental and {
         type = "unlock-recipe",
         recipe = "flow-controller"
       } or nil
     },
-    prerequisites = tf.compilePrereqs{not (mods["Krastorio2"] or mods["MoreScience"]) and "logistic-science-pack" or nil, parts.experimental and "electronics" or nil},
+    prerequisites = tf.compilePrereqs{not (mods["Krastorio2"] or mods["MoreScience"]) and "logistic-science-pack" or nil, parts.nickelExperimental and "electronics" or nil, "steel-processing"},
     unit =
     {
       count = 50,
@@ -33,12 +33,12 @@ data:extend({
   }
 })
 
-if parts.experimental then
+if parts.nickelExperimental then
   data:extend({
     {
       type = "technology",
       name = "injection-molding",
-      icon = "__IfNickel-Updated__/graphics/tech/injection-molding.png",
+      icon = "__Ultimate_Intermediates__/graphics/tech/injection-molding.png",
       icon_size = 256,
       effects =
       {
@@ -64,7 +64,7 @@ if parts.experimental then
     {
       type = "technology",
       name = "gimbaled-thruster",
-      icon = "__IfNickel-Updated__/graphics/tech/gimbaled-thruster.png",
+      icon = "__Ultimate_Intermediates__/graphics/tech/gimbaled-thruster.png",
       icon_size = 256,
       effects =
       {
@@ -82,7 +82,7 @@ if parts.experimental then
           {"automation-science-pack", 1},
           {"logistic-science-pack", 1},
           {"chemical-science-pack", 1},
-          (not (mods["space-exploration"] or mods["LunarLandings"])) and {"utility-science-pack", 1} or nil
+          (not (mods["space-age"] or mods["space-exploration"] or mods["LunarLandings"])) and {"utility-science-pack", 1} or nil
         },
         time = 30
       },
@@ -94,7 +94,7 @@ if parts.experimental then
       {
         type = "technology",
         name = "mechanical-engineering",
-        icon = "__IfNickel-Updated__/graphics/tech/mechanical-engineering.png",
+        icon = "__Ultimate_Intermediates__/graphics/tech/mechanical-engineering.png",
         icon_size = 256,
         effects =
         {
@@ -125,7 +125,7 @@ if parts.experimental then
         name = "machine-homeostasis",
         icons = {
           {
-            icon = "__IfNickel-Updated__/graphics/tech/advanced-flow-controller.png",
+            icon = "__Ultimate_Intermediates__/graphics/tech/advanced-flow-controller.png",
             icon_size = 256
           },
           {
@@ -164,7 +164,7 @@ if parts.experimental then
       {
         type = "technology",
         name = "advanced-flow-controller",
-        icon = "__IfNickel-Updated__/graphics/tech/advanced-flow-controller.png",
+        icon = "__Ultimate_Intermediates__/graphics/tech/advanced-flow-controller.png",
         icon_size = 256,
         effects =
         {
@@ -190,7 +190,7 @@ if parts.experimental then
       {
         type = "technology",
         name = "nickel-electromagnet",
-        icon = "__IfNickel-Updated__/graphics/tech/nickel-electromagnet.png",
+        icon = "__Ultimate_Intermediates__/graphics/tech/nickel-electromagnet.png",
         icon_size = 256,
         effects =
         {
@@ -224,7 +224,7 @@ if parts.nitinol then
       name = "nitinol-processing",
       icons = {
         {
-          icon = "__IfNickel-Updated__/graphics/tech/nitinol-processing.png",
+          icon = "__Ultimate_Intermediates__/graphics/tech/nitinol-processing.png",
           icon_size = 256
         }
       },
@@ -263,7 +263,7 @@ if parts.nitinol then
       name = "space-nitinol-processing",
       icons = {
         {
-          icon = "__IfNickel-Updated__/graphics/tech/nitinol-processing.png",
+          icon = "__Ultimate_Intermediates__/graphics/tech/nitinol-processing.png",
           icon_size = 256
         },
         {
@@ -301,7 +301,7 @@ if parts.nitinol then
       name = "nitinol-mesh-beryllium",
       icons = {
         {
-          icon = "__IfNickel-Updated__/graphics/tech/nitinol-processing.png",
+          icon = "__Ultimate_Intermediates__/graphics/tech/nitinol-processing.png",
           icon_size = 256
         },
         {

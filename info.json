@@ -1,10 +1,10 @@
 {
-  "name": "Ultimate_Intermediates",
+  "name": "Planetfall_Intermediates",
   "version": "1.0.0",
-  "title": "Ultimate Intermediates",
-  "author": "Vladiskus",
+  "title": "Planetfall Intermediates",
+  "author": "planetfall, Vladiskus",
   "homepage": "",
-  "description": "Adds a large number of intermediate products to the game. The mod is designed to be compatible with a wide range of other mods.",
+  "description": "Intermediates from planetfall mods",
   "factorio_version": "2.0",
   "dependencies": [
     "base >= 2.0",
@@ -13,6 +13,7 @@
     "? space-exploration",
     "? Krastorio2-spaced-out",
     "? Krastorio2",
+    "? IfNickel-Updated",
     "(?) bzlead",
     "(?) bzaluminum",
     "(?) bzcarbon",
@@ -28,12 +29,9 @@
     "(?) bztungsten2",
     "(?) bzgold2",
     "(?) BrassTacks-Updated",
-    "(?) manganese",
-    "(?) deadlock-beltboxes-loaders",
-    "(?) DeadlockCrating",
     "(?) FluidMustFlow",
     "(?) Expensive_Fluid_Must_Flow_Recipes",
-    "(?) 248k-Redux >= 0.1.35",
+    "(?) 248k-Redux",
     "(?) LunarLandings"
   ]
 }

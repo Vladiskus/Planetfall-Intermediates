@@ -5,7 +5,7 @@ local parts = require("variable-parts")
 if mods["cargo-ships"] then
   rm.AddIngredient("oil_tanker", "invar-valve", 10)
 
-  if parts.experimental then
+  if parts.nickelExperimental then
     rm.ReplaceProportional("oil_rig", "electronic-circuit", "flow-controller", 1/3)
     rm.AddIngredient("bridge_base", "motorized-articulator", 10)
   else
@@ -21,7 +21,7 @@ if mods["cargo-ships"] then
 end
 
 if mods["ch-concentrated-solar"] then
-  if parts.experimental then
+  if parts.nickelExperimental then
     rm.ReplaceProportional("chcs-heliostat-mirror", "electronic-circuit", "motorized-articulator", 0.4)
     rm.ReplaceProportional("chcs-solar-laser-tower", "iron-gear-wheel", "motorized-articulator", 0.5)
   else

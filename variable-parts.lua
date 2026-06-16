@@ -1,5 +1,7 @@
 local parts = {}
 
+parts.aai = mods["aai-industry"]
+
 parts.bz = {}
 parts.bz.carbon = mods["bzcarbon"] or mods["bzcarbon2"]
 parts.bz.lead = mods["bzlead"] or mods["bzlead2"]
@@ -13,11 +15,21 @@ parts.bz.gas = mods["bzgas"] or mods["bzgas2"]
 parts.bz.chlorine = mods["bzchlorine"] or mods["bzchlorine2"]
 parts.bz.tungsten = mods["bztungsten"] or mods["bztungsten2"]
 
-parts.nickelExperimental = true
-parts.zinc = mods["BrassTacks-Updated"]
-parts.brassExperiment = false
-parts.aai = true
+parts.nickel = true
+parts.nickelExperimental = parts.nickel
 parts.motor = "electric-motor"
+parts.steelValve = false
+parts.nitinol = false
+
+parts.brass = true
+parts.brassExperimental = parts.brass
+parts.gyroscope = "gyro"
+
+if data.raw.item["diamond"] and (mods["aai-industry"] or mods["big-mining-drill"] or mods["Krastorio2"] or mods["vtk-deep-core-mining"] or mods["248k-Redux"]) then
+  parts.drill = true
+else
+  parts.drill = false
+end
 
 function parts.preferred(ingredients, quantities)
   for k, v in ipairs(ingredients) do
@@ -33,12 +45,20 @@ function parts.optionalIngredient(item, amount)
   end
 end
 
+function parts.qualityIconPath(mod, icon)
+  local prefix = ""
+  if mod == "brasstacks" then
+    prefix = "__Planetfall_Intermediates__/graphics/galdoc/"
+  end
+  if prefix ~= "" then
+    return prefix .. icon
+  end
+end
+
 if (mods["bzfoundry"] or mods["bzfoundry2"]) and not settings.startup["bzfoundry-minimal"].value then
   parts.foundryEnabled = true
 else
   parts.foundryEnabled = false
 end
-
-parts.nitinol = false
 
 return parts

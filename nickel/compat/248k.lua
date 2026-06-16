@@ -26,7 +26,7 @@ if mods["248k-Redux"] then
   rm.ReplaceIngredient("el_pressurizer", "electronic-circuit", parts.motor, 10)
   rm.ReplaceIngredient("el_pressurizer", "iron-gear-wheel", "invar-valve", 10)
 
-  if parts.brassExperiment then
+  if parts.brassExperimental then
     rm.ReplaceIngredient("el_purifier", "electronic-circuit", parts.motor, 5)
   else
     rm.ReplaceIngredient("el_purifier", "iron-gear-wheel", parts.motor, 10)

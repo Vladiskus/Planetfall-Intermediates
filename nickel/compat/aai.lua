@@ -53,7 +53,7 @@ end
 
 if mods["aai-signal-transmission"] then
   if parts.nickelExperimental then
-    if parts.brassExperiment then
+    if parts.brassExperimental then
       --unnecessary. big motor and gyro already need plenty nickel.
 
       --rm.AddIngredient("skyseeker-armature", "motorized-articulator", 1)
@@ -117,7 +117,7 @@ if mods["space-exploration"] then
       --rm.ReplaceIngredient("se-aeroframe-bulkhead", "titanium-plate", "nitinol-plate", 2)
       rm.ReplaceIngredient("se-lattice-pressure-vessel", "titanium-plate", "nitinol-mesh", 2)
 
-      if parts.brassExperiment then
+      if parts.brassExperimental then
         rm.RemoveIngredient("complex-joint-iridium", "articulated-mechanism", 16)
         rm.AddIngredient("complex-joint-iridium", "nitinol-plate", 4) --good springs
       end
@@ -237,7 +237,7 @@ if mods["space-exploration"] then
 
     rm.AddIngredient("se-electric-boiler", "flow-controller", 1)
 
-    if not parts.brassExperiment then
+    if not parts.brassExperimental then
       rm.AddIngredient("se-spaceship-gate", "motorized-articulator", 6)
     end
     rm.ReplaceIngredient("se-spaceship-rocket-booster-tank", "se-space-pipe", "gimbaled-thruster", 4)

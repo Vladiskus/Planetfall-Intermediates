@@ -9,7 +9,7 @@ data:extend({
   {
     type = "item",
     name = "invar-valve",
-    icon = "__Ultimate_Intermediates__/graphics/icons/invar-valve.png",
+    icon = "__Planetfall_Intermediates__/graphics/icons/invar-valve.png",
     icon_size = 64,
     subgroup = "intermediate-product",
     order = "cf",
@@ -40,7 +40,7 @@ if not mods["aai-industry"] then
     {
       type = "item",
       name = "motor",
-      icon = "__Ultimate_Intermediates__/graphics/icons/motor.png",
+      icon = "__Planetfall_Intermediates__/graphics/icons/motor.png",
       icon_size = 64,
       subgroup = "intermediate-product",
       localised_name = {"item-name.motor-nickel"}, --different locale key to avoid overriding "single cylinder engine" text
@@ -56,7 +56,7 @@ if parts.nickelExperimental then
     {
       type = "item",
       name = "motorized-articulator",
-      icon = "__Ultimate_Intermediates__/graphics/icons/motorized-articulator.png",
+      icon = "__Planetfall_Intermediates__/graphics/icons/motorized-articulator.png",
       icon_size = 64,
       subgroup = "intermediate-product",
       order = "gb",
@@ -65,7 +65,7 @@ if parts.nickelExperimental then
     {
       type = "item",
       name = "flow-controller",
-      icon = "__Ultimate_Intermediates__/graphics/icons/flow-controller.png",
+      icon = "__Planetfall_Intermediates__/graphics/icons/flow-controller.png",
       icon_size = 64,
       subgroup = "intermediate-product",
       order = "cg",
@@ -74,7 +74,7 @@ if parts.nickelExperimental then
     {
       type = "item",
       name = "cooling-fan",
-      icon = "__Ultimate_Intermediates__/graphics/icons/cooling-fan.png",
+      icon = "__Planetfall_Intermediates__/graphics/icons/cooling-fan.png",
       icon_size = 64,
       subgroup = "intermediate-product",
       order = "ch",
@@ -83,7 +83,7 @@ if parts.nickelExperimental then
     {
       type = "item",
       name = "gimbaled-thruster",
-      icon = "__Ultimate_Intermediates__/graphics/icons/gimbaled-thruster.png",
+      icon = "__Planetfall_Intermediates__/graphics/icons/gimbaled-thruster.png",
       icon_size = 64,
       subgroup = "intermediate-product",
       order = "na",
@@ -96,7 +96,7 @@ if parts.nickelExperimental then
       {
         type = "item",
         name = "gimbaled-thruster-packed",
-        icon = "__Ultimate_Intermediates__/graphics/icons/gimbaled-thruster-packed.png",
+        icon = "__Planetfall_Intermediates__/graphics/icons/gimbaled-thruster-packed.png",
         icon_size = 64,
         subgroup = "ll-packed-rocket-ingredients",
         order = "z",
@@ -110,7 +110,7 @@ if parts.nickelExperimental then
       {
         type = "item",
         name = "machining-tool",
-        icon = "__Ultimate_Intermediates__/graphics/icons/machining-tool.png",
+        icon = "__Planetfall_Intermediates__/graphics/icons/machining-tool.png",
         icon_size = 64,
         subgroup = "intermediate-product",
         order = "nb",
@@ -119,7 +119,7 @@ if parts.nickelExperimental then
       {
         type = "item",
         name = "advanced-machining-tool",
-        icon = "__Ultimate_Intermediates__/graphics/icons/advanced-machining-tool.png",
+        icon = "__Planetfall_Intermediates__/graphics/icons/advanced-machining-tool.png",
         icon_size = 64,
         subgroup = "intermediate-product",
         order = "nc",
@@ -144,7 +144,7 @@ if mods["space-exploration"] then
       {
         type = "item",
         name = "advanced-flow-controller",
-        icon = "__Ultimate_Intermediates__/graphics/icons/advanced-flow-controller.png",
+        icon = "__Planetfall_Intermediates__/graphics/icons/advanced-flow-controller.png",
         icon_size = 64,
         subgroup = "intermediate-product",
         order = "cga",
@@ -153,7 +153,7 @@ if mods["space-exploration"] then
       {
         type = "item",
         name = "nickel-electromagnet",
-        icon = "__Ultimate_Intermediates__/graphics/icons/nickel-electromagnet.png",
+        icon = "__Planetfall_Intermediates__/graphics/icons/nickel-electromagnet.png",
         icon_size = 64,
         subgroup = "electronic",
         order = "b-02-b",
@@ -168,7 +168,7 @@ if parts.nitinol then
     {
       type = "item",
       name = "nitinol-plate",
-      icon = "__Ultimate_Intermediates__/graphics/icons/nitinol-plate.png",
+      icon = "__Planetfall_Intermediates__/graphics/icons/nitinol-plate.png",
       icon_size = 64,
       subgroup = "intermediate-product",
       order = "???",
@@ -177,7 +177,7 @@ if parts.nitinol then
     {
       type = "item",
       name = "nitinol-mesh",
-      icon = "__Ultimate_Intermediates__/graphics/icons/nitinol-mesh.png",
+      icon = "__Planetfall_Intermediates__/graphics/icons/nitinol-mesh.png",
       icon_size = 64,
       subgroup = "advanced-assembling",
       order = "g",
@@ -186,7 +186,7 @@ if parts.nitinol then
     {
       type = "item",
       name = "self-regulating-valve",
-      icon = "__Ultimate_Intermediates__/graphics/icons/self-regulating-valve.png",
+      icon = "__Planetfall_Intermediates__/graphics/icons/self-regulating-valve.png",
       icon_size = 64,
       subgroup = "advanced-assembling",
       order = "h",
@@ -198,7 +198,7 @@ if parts.nitinol then
       {
         type = "item",
         name = "nitinol-precursor",
-        icon = "__Ultimate_Intermediates__/graphics/icons/nitinol-precursor.png",
+        icon = "__Planetfall_Intermediates__/graphics/icons/nitinol-precursor.png",
         icon_size = 64,
         subgroup = "intermediate-product",
         order = "???",

@@ -5,7 +5,7 @@ data:extend({
   {
     type = "technology",
     name = "valves",
-    icon = "__Ultimate_Intermediates__/graphics/tech/valves.png",
+    icon = "__Planetfall_Intermediates__/graphics/tech/valves.png",
     icon_size = 256, icon_mipmaps = 4,
     effects =
     {
@@ -38,7 +38,7 @@ if parts.nickelExperimental then
     {
       type = "technology",
       name = "injection-molding",
-      icon = "__Ultimate_Intermediates__/graphics/tech/injection-molding.png",
+      icon = "__Planetfall_Intermediates__/graphics/tech/injection-molding.png",
       icon_size = 256,
       effects =
       {
@@ -64,7 +64,7 @@ if parts.nickelExperimental then
     {
       type = "technology",
       name = "gimbaled-thruster",
-      icon = "__Ultimate_Intermediates__/graphics/tech/gimbaled-thruster.png",
+      icon = "__Planetfall_Intermediates__/graphics/tech/gimbaled-thruster.png",
       icon_size = 256,
       effects =
       {
@@ -89,12 +89,12 @@ if parts.nickelExperimental then
       order = "b"
     }
   })
-  if not parts.brassExperiment then
+  if not parts.brassExperimental then
     data:extend({
       {
         type = "technology",
         name = "mechanical-engineering",
-        icon = "__Ultimate_Intermediates__/graphics/tech/mechanical-engineering.png",
+        icon = "__Planetfall_Intermediates__/graphics/tech/mechanical-engineering.png",
         icon_size = 256,
         effects =
         {
@@ -125,7 +125,7 @@ if parts.nickelExperimental then
         name = "machine-homeostasis",
         icons = {
           {
-            icon = "__Ultimate_Intermediates__/graphics/tech/advanced-flow-controller.png",
+            icon = "__Planetfall_Intermediates__/graphics/tech/advanced-flow-controller.png",
             icon_size = 256
           },
           {
@@ -164,7 +164,7 @@ if parts.nickelExperimental then
       {
         type = "technology",
         name = "advanced-flow-controller",
-        icon = "__Ultimate_Intermediates__/graphics/tech/advanced-flow-controller.png",
+        icon = "__Planetfall_Intermediates__/graphics/tech/advanced-flow-controller.png",
         icon_size = 256,
         effects =
         {
@@ -190,7 +190,7 @@ if parts.nickelExperimental then
       {
         type = "technology",
         name = "nickel-electromagnet",
-        icon = "__Ultimate_Intermediates__/graphics/tech/nickel-electromagnet.png",
+        icon = "__Planetfall_Intermediates__/graphics/tech/nickel-electromagnet.png",
         icon_size = 256,
         effects =
         {
@@ -215,120 +215,4 @@ if parts.nickelExperimental then
       }
     })
   end
-end
-
-if parts.nitinol then
-  data:extend({
-    {
-      type = "technology",
-      name = "nitinol-processing",
-      icons = {
-        {
-          icon = "__Ultimate_Intermediates__/graphics/tech/nitinol-processing.png",
-          icon_size = 256
-        }
-      },
-      effects = {
-        {
-          type = "unlock-recipe",
-          recipe = "nitinol-plate"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "nitinol-mesh"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "self-regulating-valve"
-        },
-        (not (parts.foundryEnabled or mods["Krastorio2"])) and {
-          type = "unlock-recipe",
-          recipe = "nitinol-precursor"
-        } or nil,
-      },
-      prerequisites = { "se-rocket-science-pack" },
-      unit = {
-        count = 250,
-        ingredients = {
-          { "automation-science-pack", 1 },
-          { "logistic-science-pack", 1 },
-          { "chemical-science-pack", 1 },
-          { "se-rocket-science-pack", 1 },
-        },
-        time = 30
-      }
-    },
-    {
-      type = "technology",
-      name = "space-nitinol-processing",
-      icons = {
-        {
-          icon = "__Ultimate_Intermediates__/graphics/tech/nitinol-processing.png",
-          icon_size = 256
-        },
-        {
-          icon = "__space-exploration-graphics__/graphics/technology/thermodynamics-laboratory.png",
-          icon_size = 128,
-          scale = 0.66,
-          shift = {-64, -64}
-        }
-      },
-      localised_description = mods["LasingAround-Updated"] and {"technology-description.space-nitinol-processing-helium"} or {"technology-description.space-nitinol-processing"},
-      effects = {
-        {
-          type = "unlock-recipe",
-          recipe = "nitinol-plate-space"
-        },
-        mods["LasingAround-Updated"] and {
-          type = "unlock-recipe",
-          recipe = "nitinol-plate-helium"
-        } or nil
-      },
-      prerequisites = { "se-space-thermodynamics-laboratory" },
-      unit = {
-        count = 250,
-        ingredients = {
-          { "automation-science-pack", 1 },
-          { "logistic-science-pack", 1 },
-          { "chemical-science-pack", 1 },
-          { "space-science-pack", 1 },
-        },
-        time = 60
-      }
-    },
-    {
-      type = "technology",
-      name = "nitinol-mesh-beryllium",
-      icons = {
-        {
-          icon = "__Ultimate_Intermediates__/graphics/tech/nitinol-processing.png",
-          icon_size = 256
-        },
-        {
-          icon = "__space-exploration-graphics__/graphics/technology/beryllium-processing.png",
-          icon_size = 128,
-          scale = 0.66,
-          shift = {-64, -64}
-        }
-      },
-      effects = {
-        {
-          type = "unlock-recipe",
-          recipe = "nitinol-mesh-beryllium"
-        }
-      },
-      prerequisites = { "se-aeroframe-pole" },
-      unit = {
-        count = 100,
-        ingredients = {
-          { "automation-science-pack", 1 },
-          { "logistic-science-pack", 1 },
-          { "chemical-science-pack", 1 },
-          { "utility-science-pack", 1 },
-          { "se-astronomic-science-pack-1", 1 },
-        },
-        time = 60
-      }
-    }
-  })
 end

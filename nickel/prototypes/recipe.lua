@@ -21,7 +21,7 @@ data:extend({
     category = "advanced-crafting",
     enabled = false,
     energy_required = 3,
-    ingredients = tf.compilePrereqs{{type="item", name="steel-plate", amount=1}, {type="item", name="pipe", amount=2}, parts.preferred({"airtight-seal", "brass-plate", "copper-plate"}, {1, 2, 2})},
+    ingredients = tf.compilePrereqs{{type="item", name="steel-plate", amount=1}, {type="item", name="pipe", amount=2}, parts.preferred({"airtight-seal", "copper-plate"}, {1, 2})},
     results = {{type="item", name="invar-valve", amount=1}},
   }
 })
@@ -82,7 +82,7 @@ if parts.nickelExperimental then
         category = "crafting",
         energy_required = 2,
         enabled = false,
-        icon = "__Ultimate_Intermediates__/graphics/icons/gimbaled-thruster-packed.png",
+        icon = "__Planetfall_Intermediates__/graphics/icons/gimbaled-thruster-packed.png",
         icon_size = 64,
         subgroup = "ll-packed-rocket-ingredients",
         localised_name = {"recipe-name.pack-gimbaled-thruster"},
@@ -96,7 +96,7 @@ if parts.nickelExperimental then
         category = "crafting",
         energy_required = 2,
         enabled = false,
-        icon = "__Ultimate_Intermediates__/graphics/icons/gimbaled-thruster-packed.png",
+        icon = "__Planetfall_Intermediates__/graphics/icons/gimbaled-thruster-packed.png",
         icon_size = 64,
         subgroup = "ll-packed-rocket-ingredients",
         localised_name = {"recipe-name.unpack-gimbaled-thruster"},
@@ -157,7 +157,7 @@ if parts.nickelExperimental then
         category = "advanced-crafting",
         icons = {
           {
-            icon = "__Ultimate_Intermediates__/graphics/icons/flow-controller.png",
+            icon = "__Planetfall_Intermediates__/graphics/icons/flow-controller.png",
             icon_size = 64
           },
           {
@@ -181,7 +181,7 @@ if parts.nickelExperimental then
         category = "advanced-crafting",
         icons = {
           {
-            icon = "__Ultimate_Intermediates__/graphics/icons/advanced-flow-controller.png",
+            icon = "__Planetfall_Intermediates__/graphics/icons/advanced-flow-controller.png",
             icon_size = 64
           },
           {
@@ -236,7 +236,7 @@ if parts.nitinol then
       category = "advanced-crafting",
       icons = {
         {
-          icon = "__Ultimate_Intermediates__/graphics/icons/nitinol-mesh.png",
+          icon = "__Planetfall_Intermediates__/graphics/icons/nitinol-mesh.png",
           icon_size = 64
         },
         {

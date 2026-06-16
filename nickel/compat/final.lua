@@ -64,7 +64,7 @@ if mods["Krastorio2"] then
   end
 end
 
-if parts.nickelExperimental and parts.brassExperiment then
+if parts.nickelExperimental and parts.brassExperimental then
   rm.RemoveIngredient("assembling-machine-3", "steel-plate", 8)
 end
 

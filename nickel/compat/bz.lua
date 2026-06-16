@@ -99,7 +99,7 @@ if parts.bz.gold then
     else
       motor2.icons = {
         {
-            icon = "__Ultimate_Intermediates__/graphics/icons/motor.png",
+            icon = "__Planetfall_Intermediates__/graphics/icons/motor.png",
             icon_size = 64
           },
           {

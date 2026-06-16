@@ -7,7 +7,7 @@ if parts.nickelExperimental then
   tf.removePrereq("processing-unit", "chemical-science-pack")
   tf.addPrereq("processing-unit", "injection-molding")
   
-  if parts.brassExperiment then
+  if parts.brassExperimental then
     tf.addRecipeUnlock("mechanical-engineering", "motorized-articulator")
   end
   
@@ -74,10 +74,7 @@ if parts.nickelExperimental then
     --rm.RemoveIngredient("assembling-machine-2", "electric-motor", 99999)
   end
   rm.AddIngredient("assembling-machine-2", "flow-controller", 1)
-  if not rm.RemoveIngredient("assembling-machine-2", "tungsten-carbide", 1) then
-    rm.RemoveIngredient("assembling-machine-2", "galvanized-steel-plate", 1)
-    rm.RemoveIngredient("assembling-machine-2", "steel-plate", 1)
-  end
+  rm.RemoveIngredient("assembling-machine-2", "tungsten-carbide", 1)
 
   if not mods["space-exploration"] then
     if mods["MoreScience"] then
@@ -190,7 +187,7 @@ else
   rm.AddIngredient("science-cauldron", "invar-valve", 5)
 end
 
-if parts.brassExperiment then
+if parts.brassExperimental then
   --rm.AddIngredient("gearbox", parts.motor, 2, 2)
 else
   rm.AddIngredient("fast-transport-belt", parts.motor, 1)
@@ -247,7 +244,7 @@ end
 
 tf.addPrereq("automation-2", "valves")
 
-if not parts.zinc and not parts.aai then
+if not parts.brass and not parts.aai then
   tf.addPrereq("automation-3", "electric-engine")
   rm.AddIngredient("assembling-machine-3", "electric-engine-unit", 2)
 end
@@ -292,9 +289,6 @@ end
 
 rm.AddIngredient("transport-belt-beltbox", parts.motor, 1)
 rm.AddIngredient("express-transport-belt-beltbox", "electric-engine-unit", 1)
-if deadlock and data.raw["technology"]["deadlock-stacking-3"] then
-  tf.addPrereq("deadlock-stacking-3", "electric-engine")
-end
 
 if mods["Flow Control"] then
   --tf.addPrereq("flow_control_valves_tech", "valves")
@@ -314,7 +308,7 @@ if mods["LunarLandings"] then
 
   --rm.SetCategory(parts.motor, "circuit-crafting") --eh. it's electrical.
 
-  if not parts.brassExperiment then
+  if not parts.brassExperimental then
     rm.AddIngredient("ll-telescope", "motor", 10)
   end
 

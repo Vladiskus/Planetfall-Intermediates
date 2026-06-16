@@ -7,3 +7,7 @@ end
 if parts.nickel and not mods["IfNickel-Updated"] and not mods["IfNickel"] then
     require("nickel.data-final-fixes")
 end
+
+if parts.gold and not mods["ThemTharHills-Updated"] and not mods["ThemTharHills"] then
+    require("gold.data-final-fixes")
+end

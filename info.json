@@ -9,6 +9,8 @@
   "dependencies": [
     "base >= 2.0",
     "(?) aai-industry",
+    "(?) aai-containers",
+    "(?) aai-signal-transmission",
     "(?) space-age",
     "(?) space-exploration",
     "(?) Krastorio2-spaced-out",

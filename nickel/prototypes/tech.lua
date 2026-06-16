@@ -82,7 +82,7 @@ if parts.nickelExperimental then
           {"automation-science-pack", 1},
           {"logistic-science-pack", 1},
           {"chemical-science-pack", 1},
-          (not (mods["space-age"] or mods["space-exploration"] or mods["LunarLandings"])) and {"utility-science-pack", 1} or nil
+          (not (mods["space-exploration"] or mods["LunarLandings"])) and {"utility-science-pack", 1} or nil
         },
         time = 30
       },

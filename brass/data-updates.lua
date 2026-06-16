@@ -439,10 +439,10 @@ if mods["LunarLandings"] then
   end
 end
 
-require("compat.bob")
-require("compat.aai")
-require("compat.kras")
-require("compat.bz")
-require("compat.freight")
-require("compat.248k")
---require("compat.galdoc")
+require("brass.compat.bob")
+require("brass.compat.aai")
+require("brass.compat.kras")
+require("brass.compat.bz")
+require("brass.compat.freight")
+require("brass.compat.248k")
+--require("brass.compat.galdoc")

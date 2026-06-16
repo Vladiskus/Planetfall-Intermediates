@@ -133,38 +133,25 @@ if mods["space-exploration"] then
       rm.AddIngredient("productivity-module-6", "self-regulating-valve", 30)
 
       rm.AddIngredient("se-space-radiator", "nitinol-plate", 10)
-      rm.AddIngredient("se-space-radiator-2", "self-regulating-valve", 10)
+      rm.AddIngredient("se-space-radiator-2", "invar-valve", 10)
 
       rm.AddIngredient("se-space-thermodynamics-laboratory", "nitinol-plate", 20)
       rm.AddIngredient("se-space-mechanical-laboratory", "nitinol-mesh", 20)
 
-      rm.AddIngredient("se-big-heat-exchanger", "self-regulating-valve", 50)
-      rm.RemoveIngredient("se-big-heat-exchanger", "titanium-plate", 99999)
-      rm.RemoveIngredient("se-big-heat-exchanger", "titanium-palladium-flange", 99999)
+      rm.AddIngredient("se-big-heat-exchanger", "invar-valve", 50)
 
-      rm.AddIngredient("se-big-turbine", "self-regulating-valve", 50)
-      rm.RemoveIngredient("se-big-turbine", "titanium-plate", 99999)
-      rm.RemoveIngredient("se-big-turbine", "titanium-palladium-flange", 99999)
+      rm.AddIngredient("se-big-turbine", "invar-valve", 50)
 
       --tf.addPrereq("nuclear-power", "nitinol-processing")
 
-      rm.AddIngredient("heat-exchanger", "self-regulating-valve", 10)
-      rm.RemoveIngredient("heat-exchanger", "titanium-plate", 99999)
-      rm.RemoveIngredient("heat-exchanger", "titanium-palladium-flange", 99999)
-      rm.AddIngredient("steam-turbine", "self-regulating-valve", 10)
+      rm.AddIngredient("heat-exchanger", "invar-valve", 10)
+      rm.AddIngredient("steam-turbine", "invar-valve", 10)
       rm.RemoveIngredient("steam-turbine", "pipe", 10)
-      rm.RemoveIngredient("steam-turbine", "titanium-plate", 99999)
-      rm.RemoveIngredient("steam-turbine", "titanium-palladium-flange", 99999)
 
-      rm.AddIngredient("se-condenser-turbine", "self-regulating-valve", 10)
-      rm.RemoveIngredient("se-condenser-turbine", "titanium-plate", 99999)
-      rm.RemoveIngredient("se-condenser-turbine", "titanium-palladium-flange", 99999)
+      rm.AddIngredient("se-condenser-turbine", "invar-valve", 10)
 
       rm.ReplaceProportional("se-cargo-rocket-cargo-pod", "steel-plate", "nitinol-mesh", 0.5)
-      if (mods["Krastorio2"] or mods["ThemTharHills-Updated"]) or not data.raw.item["titanium-palladium-flange"] then
-        --K2 allows palladium from rare metal ore, TTH allows some pall/plat ore on nauvis from byproducts.
-        rm.ReplaceProportional("se-cargo-rocket-fuel-tank", "pipe", "self-regulating-valve", 0.5)
-      end
+      rm.ReplaceProportional("se-cargo-rocket-fuel-tank", "pipe", "invar-valve", 0.5)
 
       --tf.addPrereq("se-cargo-rocket-silo", "nitinol-processing")
 
@@ -175,11 +162,11 @@ if mods["space-exploration"] then
       rm.ReplaceIngredient("se-tensile-strength-data", "steel-plate", "nitinol-plate", 1)
 
       if mods["Krastorio2"] then
-        rm.AddIngredient("kr-fusion-reactor", "self-regulating-valve", 100)
+        rm.AddIngredient("kr-fusion-reactor", "invar-valve", 100)
         rm.ReplaceIngredient("kr-advanced-transport-belt", "titanium-plate", "nitinol-mesh", 1)
         rm.AddIngredient("kr-advanced-splitter", "nitinol-mesh", 2)
 
-        rm.ReplaceIngredient("kr-advanced-steam-turbine", "titanium-palladium-flange", "self-regulating-valve", 10)
+        rm.ReplaceIngredient("kr-advanced-steam-turbine", "titanium-palladium-flange", "invar-valve", 10)
       end
     end
 

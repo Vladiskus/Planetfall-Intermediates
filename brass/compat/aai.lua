@@ -22,16 +22,6 @@ if mods["aai-containers"] then
   end
 end
 
-if mods["textplates"] and not mods["galdocs-manufacturing"] then
-  if not (data.raw.item["gold-plate"] or data.raw.item["ei_gold-plate"] or data.raw.item["fi_gold"]) then
-    if data.raw.recipe["textplate-small-gold"] then
-      data.raw.recipe["textplate-small-gold"].enabled = true
-      data.raw.recipe["textplate-large-gold"].enabled = true
-      data.raw.technology["textplates-gold"] = nil
-    end
-  end
-end
-
 if mods["aai-signal-transmission"] then
   if parts.brassExperimental then
     tf.addPrereq("aai-signal-transmission", "skyseeker-armature")

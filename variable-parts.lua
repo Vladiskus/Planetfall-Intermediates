@@ -31,6 +31,10 @@ else
   parts.drill = false
 end
 
+parts.gold = true
+parts.heavyGyro = true
+parts.aquaregia = false
+
 function parts.preferred(ingredients, quantities)
   for k, v in ipairs(ingredients) do
     if data.raw.item[v] then

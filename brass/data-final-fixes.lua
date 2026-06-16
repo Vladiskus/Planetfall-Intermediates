@@ -32,7 +32,7 @@ for k, v in pairs(allowed_recipes) do
   end
 end
 
-require("compat.final")
+require("brass.compat.final")
 
 --for k, v in pairs(data.raw.recipe) do
 --  rm.ReplaceProportional(k, "brass-pipe-fitting", "bolted-flange", 1)

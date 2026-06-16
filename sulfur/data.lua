@@ -1,0 +1,5 @@
+require("sulfur.prototypes.burner_chem")
+require("sulfur.prototypes.greenhouse")
+require("sulfur.prototypes.items")
+require("sulfur.prototypes.recipe")
+require("sulfur.prototypes.technology")

@@ -1,6 +1,7 @@
 local parts = {}
 
 parts.aai = mods["aai-industry"]
+parts.k2 = mods["Krastorio2"] or mods["Krastorio2-spaced-out"]
 
 parts.bz = {}
 parts.bz.carbon = mods["bzcarbon"] or mods["bzcarbon2"]
@@ -15,13 +16,13 @@ parts.bz.gas = mods["bzgas"] or mods["bzgas2"]
 parts.bz.chlorine = mods["bzchlorine"] or mods["bzchlorine2"]
 parts.bz.tungsten = mods["bztungsten"] or mods["bztungsten2"]
 
-parts.nickel = true
+parts.nickel = true or mods["IfNickel-Updated"] or mods["IfNickelMk2"]
 parts.nickelExperimental = parts.nickel
 parts.motor = "electric-motor"
 parts.steelValve = false
 parts.nitinol = false
 
-parts.brass = true
+parts.brass = true or mods["BrassTacks-Updated"] or mods["BrassTacksMk2"]
 parts.brassExperimental = parts.brass
 parts.gyroscope = "gyro"
 
@@ -31,9 +32,21 @@ else
   parts.drill = false
 end
 
-parts.gold = true
+parts.gold = true or mods["ThemTharHills-Updated"] or mods["ThemTharHillsMk2"]
 parts.heavyGyro = true
 parts.aquaregia = false
+
+parts.sulfur = true or mods["BrimStuff-Updated"] or mods["BrimStuffMk2"]
+parts.green = not parts.k2
+parts.waste = false
+parts.oil_tol = true
+parts.coke_tol = true
+
+if mods["ThemTharHills-Updated"] then
+  parts.acidwaste = "depleted-acid"
+else
+  parts.acidwaste = "chemical-waste"
+end
 
 function parts.preferred(ingredients, quantities)
   for k, v in ipairs(ingredients) do

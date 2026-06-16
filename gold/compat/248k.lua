@@ -22,7 +22,7 @@ end
 if mods["248k-Redux"] then
   --fission era
   rm.RemoveIngredient("electric-engine-unit", "fi_gold", 99999)
-  if not (mods["BrassTacks-Updated"] or mods["IfNickel-Updated"]) then
+  if not (parts.brass or parts.nickel) then
     rm.ReplaceProportional("fi_crusher", "engine-unit", "electric-engine-unit", 0.67)
     rm.ReplaceProportional("fi_fiberer", "engine-unit", "electric-engine-unit", 0.67)
     rm.ReplaceProportional("fi_compound_machine", "engine-unit", "electric-engine-unit", 0.67)

@@ -103,7 +103,7 @@ if mods["space-exploration"] then
   cu.moveRecipe("rocket-engine-nozzle", "rocket-part", "o")
 end
 
-if (parts.brassExperimental and parts.nickelExperimental) or not mods["IfNickel-Updated"] then
+if (parts.brassExperimental and parts.nickelExperimental) or not parts.nickel then
   cu.moveItem("iron-gear-wheel", "rotary-components", "a")
   cu.moveItem("flywheel", "rotary-components", "b")
   cu.moveItem("drive-belt", "rotary-components", "c")
@@ -113,7 +113,7 @@ if (parts.brassExperimental and parts.nickelExperimental) or not mods["IfNickel-
   if parts.gyroscope then
     cu.moveItem(parts.gyroscope, "rotary-components", "g")
   end
-  if not mods["IfNickel-Updated"] then
+  if not parts.nickel then
     cu.moveItem("motor", "rotary-components", "h")
     cu.moveItem("electric-motor", "rotary-components", "i")
     cu.moveItem("engine-unit", "rotary-components", "j")

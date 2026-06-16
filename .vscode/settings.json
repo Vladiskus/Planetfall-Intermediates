@@ -6,6 +6,13 @@
         "se_delivery_cannon_recipes",
         "__DEBUG",
         "serpent",
-        "log"
+        "log",
+        "script",
+        "remote",
+        "assembler3pipepictures",
+        "pipecoverspictures",
+        "assembler2pipepictures",
+        "defines",
+        "deepcopy"
     ]
 }

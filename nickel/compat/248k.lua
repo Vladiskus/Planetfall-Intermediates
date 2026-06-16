@@ -17,7 +17,7 @@ if mods["248k-Redux"] then
   rm.ReplaceIngredient("el_burner", "electronic-circuit", parts.motor, 10)
   rm.RemoveIngredient("el_burner_kerosene", "pipe", 10)
   rm.AddIngredient("el_burner_kerosene", "invar-valve", 5)
-  if not mods["BrassTacks-Updated"] then
+  if not parts.brass then
     rm.ReplaceProportional("el_burner_kerosene", "pipe", "engine-unit", 0.5)
   end
   rm.RemoveIngredient("fu_burner", "pipe", 10)
@@ -46,7 +46,7 @@ if mods["248k-Redux"] then
     rm.AddIngredient("fi_refinery", "invar-valve", 20)
   end
 
-  if (mods["aai-industry"] or mods["ThemTharHills-Updated"]) and not mods["BrassTacks-Updated"] then
+  if (mods["aai-industry"] or parts.gold) and not parts.brass then
     rm.ReplaceProportional("fi_crusher", "engine-unit", "electric-engine-unit", 0.67)
     rm.ReplaceProportional("fi_fiberer", "engine-unit", "electric-engine-unit", 0.67)
     rm.ReplaceProportional("fi_compound_machine", "engine-unit", "electric-engine-unit", 0.67)

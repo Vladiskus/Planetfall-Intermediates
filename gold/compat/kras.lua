@@ -4,7 +4,7 @@ local rm = require("recipe-modify")
 local cu = require("category-utils")
 
 if mods["advanced-chemical-plant"] and not mods["Krastorio2"] then
-  if not (mods["BrassTacks-Updated"] or mods["IfNickel-Updated"]) then
+  if not (parts.brass or parts.nickel) then
     rm.AddIngredient("kr-advanced-chemical-plant", "electric-engine-unit", 4) --nobody can escape my insistence on shoving this item in every high end recipe. nobody!
   end
   rm.ReplaceIngredient("kr-advanced-chemical-plant", "efficiency-module", "hv-power-regulator", 4)

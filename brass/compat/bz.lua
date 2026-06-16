@@ -30,7 +30,7 @@ if parts.bz.gold then
     rm.RemoveIngredient("airtight-seal", "bolted-flange", 1)
     rm.AddIngredient("airtight-seal-vitalic", "silver-brazing-alloy", 50)
     rm.RemoveIngredient("airtight-seal-vitalic", "bolted-flange", 50)
-    if mods["IfNickel-Updated"] then
+    if parts.nickel then
       tf.addPrereq("valves", "silver-processing")
     else if mods["BrimStuff-Updated"] then
       tf.addPrereq("rubber", "silver-processing")
@@ -40,7 +40,7 @@ if parts.bz.gold then
   end
 end
 
-if parts.brassExperimental and parts.bz.tungsten and (not mods["IfNickel-Updated"]) and (not mods["Krastorio2"]) then
+if parts.brassExperimental and parts.bz.tungsten and (not parts.nickel ) and (not mods["Krastorio2"]) then
   if data.raw.item["cuw"] then
     rm.ReplaceIngredient("hardened-hull", "iron-plate", "cuw", 2)
   else

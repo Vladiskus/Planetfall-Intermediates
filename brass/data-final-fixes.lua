@@ -18,9 +18,9 @@ local allowed_recipes = {
   "hardened-hull-iridium",
   "airtight-seal-vitalic",
 
-  mods["Krastorio2"] and "gearbox" or nil,
-  mods["Krastorio2"] and "gearbox-iridium" or nil,
-  mods["Krastorio2"] and "advanced-gearbox" or nil,
+  parts.k2 and "gearbox" or nil,
+  parts.k2 and "gearbox-iridium" or nil,
+  parts.k2 and "advanced-gearbox" or nil,
 }
 --brass precursor not included to avoid "double dipping"
 --relatively little brass is needed in the grand scheme, being able to get +40% for relatively cheap is overkill

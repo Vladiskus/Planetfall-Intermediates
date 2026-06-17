@@ -5,7 +5,7 @@ local cu = require("category-utils")
 
 local gasket_item = "rubber"
 local gasket_ratio = 2
-if mods["BrassTacks-Updated"] then
+if parts.brass then
   gasket_item = "airtight-seal"
   gasket_ratio = 1
 else if parts.bz.carbon then
@@ -14,7 +14,7 @@ else if parts.bz.carbon then
 end end
 
 if mods["248k-Redux"] then
-  if not mods["IfNickel-Updated"] then
+  if not parts.nickel then
     rm.AddIngredient("fu_burner", gasket_item, 5 * gasket_ratio)
     rm.ReplaceProportional("el_grower", "iron-gear-wheel", gasket_item, gasket_ratio)
     rm.AddIngredient("el_burner_kerosene", gasket_item, 5 * gasket_ratio)

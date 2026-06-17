@@ -12,7 +12,7 @@ if mods["space-exploration"] then
   rm.AddIngredient("se-vulcanite-rocket-fuel", advfitting, 1)
 end
 
-if mods["Krastorio2"] then
+if parts.k2 then
   if not parts.nickel then
     local ing = {}
     ing = data.raw.recipe["pumpjack"].ingredients
@@ -28,7 +28,7 @@ if mods["Krastorio2"] then
   if rm.CheckIngredient("chemical-science-pack", "sulfuric-acid") then
     data.raw.recipe["chemical-science-pack"].category = data.raw.recipe["logistic-science-pack"].category
     rm.RemoveIngredient("chemical-science-pack", "sulfuric-acid", 999)
-    rm.ReplaceIngredient("chemical-science-pack", mods["Krastorio2"] and "kr-glass" or "glass", "battery", 5)
+    rm.ReplaceIngredient("chemical-science-pack", parts.k2 and "kr-glass" or "glass", "battery", 5)
   end
 
   if not mods["space-exploration"] then
@@ -62,7 +62,7 @@ if false then
   end
 end
 
-if mods["Krastorio2"] or parts.nickelExperimental or parts.drill or data.raw.item["skyseeker-armature"] then
+if parts.k2 or parts.nickelExperimental or parts.drill or data.raw.item["skyseeker-armature"] then
   cu.moveItem("articulated-mechanism", "articulated-components", "a")
   cu.moveItem("kr-inserter-parts", "articulated-components", "b")
   cu.moveItem("kr-automation-core", "articulated-components", "c")
@@ -119,13 +119,13 @@ if (parts.brassExperimental and parts.nickelExperimental) or not parts.nickel th
     cu.moveItem("engine-unit", "rotary-components", "j")
     cu.moveItem("electric-engine-unit", "rotary-components", "k")
   end
-else if parts.brassExperimental and mods["Krastorio2"] then
+else if parts.brassExperimental and parts.k2 then
   cu.moveItem("flywheel", "gear-components", "g")
   cu.moveItem("brass-balls", "gear-components", "h")
   cu.moveItem("bearing", "gear-components", "i") -- 9 gear components. one extra slot will be taken up by the alt gearbox if SE is installed.
 end end
 
-if parts.brassExperimental and mods["Krastorio2"] then
+if parts.brassExperimental and parts.k2 then
   cu.moveItem("iron-gear-wheel", "gear-components", "a")
   cu.moveItem("kr-steel-gear-wheel", "gear-components", "b")
   cu.moveItem("kr-imersium-gear-wheel", "gear-components", "c")
@@ -134,7 +134,7 @@ if parts.brassExperimental and mods["Krastorio2"] then
   cu.moveItem("elite-gearbox", "gear-components", "f")
 end
 
-if parts.brassExperimental or mods["Krastorio2"] then
+if parts.brassExperimental or parts.k2 then
   cu.moveItem("iron-stick", "frame-components", "a")
   cu.moveItem("kr-iron-beam", "frame-components", "b")
   cu.moveItem("kr-steel-beam", "frame-components", "c")

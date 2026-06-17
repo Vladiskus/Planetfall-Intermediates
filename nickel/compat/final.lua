@@ -5,7 +5,7 @@ local cu = require("category-utils")
 
 if mods["space-exploration"] then
   if parts.nickelExperimental then
-    if mods["Krastorio2"] then
+    if parts.k2 then
       rm.AddIngredient("se-processing-unit-holmium", "cooling-fan", 2)
     else
       rm.AddIngredient("se-processing-unit-holmium", "cooling-fan", 1)
@@ -22,7 +22,7 @@ if rm.CheckIngredient("flow-controller", "kr-automation-core") then
     rm.RemoveIngredient("flow-controller", "kr-automation-core", 1)
   else
     --only want SE glass in the recipe
-    rm.RemoveIngredient("flow-controller", mods["Krastorio2"] and "kr-glass" or "glass", 1)
+    rm.RemoveIngredient("flow-controller", parts.k2 and "kr-glass" or "glass", 1)
     --it's in the recipe now, so can be removed from some things that use flow controllers
     rm.RemoveIngredient("kr-electrolysis-plant", "kr-automation-core", 3)
     rm.RemoveIngredient("kr-filtration-plant", "kr-automation-core", 3)
@@ -32,7 +32,7 @@ if rm.CheckIngredient("flow-controller", "kr-automation-core") then
   end
 end
 
-if mods["Krastorio2"] then
+if parts.k2 then
   local ing = {}
   ing = data.raw.recipe["pumpjack"].ingredients
   --data.raw.recipe["kr-mineral-water-pumpjack"].ingredients = ing
@@ -52,7 +52,7 @@ if mods["Krastorio2"] then
   if not parts.brass then
     data.raw.recipe["chemical-science-pack"].category = data.raw.recipe["logistic-science-pack"].category
     rm.RemoveIngredient("chemical-science-pack", "sulfuric-acid", 50)
-    rm.ReplaceIngredient("chemical-science-pack", mods["Krastorio2"] and "kr-glass" or "glass", "battery", 5)
+    rm.ReplaceIngredient("chemical-science-pack", parts.k2 and "kr-glass" or "glass", "battery", 5)
   elseif not mods["space-exploration"] then
       if rm.CheckIngredient("utility-science-pack", "rocket-fuel") and parts.nickelExperimental then
         rm.AddIngredient("utility-science-pack", "complex-joint", 5)
@@ -69,7 +69,7 @@ if parts.nickelExperimental and parts.brassExperimental then
 end
 
 if not parts.brass then
-  if mods["Krastorio2"] or parts.nickelExperimental then
+  if parts.k2 or parts.nickelExperimental then
     cu.moveItem("articulated-mechanism", "articulated-components", "a")
     cu.moveItem("kr-inserter-parts", "articulated-components", "b")
     cu.moveItem("kr-automation-core", "articulated-components", "c")

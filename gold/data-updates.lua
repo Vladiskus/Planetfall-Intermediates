@@ -9,14 +9,14 @@ if data.raw.item["pcb-solder"] then
   rm.ReplaceIngredient("transceiver", "solder", "pcb-solder", 1)
 end
 
-if (mods["Krastorio2"] and parts.bz.tungsten and mods["FreightForwarding"]) and not (mods["BrimStuff-Updated"] or parts.bz.gas) then
+if (parts.k2 and parts.bz.tungsten and mods["FreightForwarding"]) and not (mods["BrimStuff-Updated"] or parts.bz.gas) then
   rm.RemoveIngredient("chemical-plant", "tungsten-plate", 99999)
   rm.RemoveIngredient("chemical-plant", "copper-tungsten", 99999)
   rm.RemoveIngredient("chemical-plant", "tungsten-carbide", 99999)
 end
 
-if rm.CheckIngredient("processing-unit", mods["Krastorio2"] and "kr-silicon" or "silicon") then
-  rm.ReplaceIngredient("processing-unit", mods["Krastorio2"] and "kr-silicon" or "silicon", "integrated-circuit", 10)
+if rm.CheckIngredient("processing-unit", parts.k2 and "kr-silicon" or "silicon") then
+  rm.ReplaceIngredient("processing-unit", parts.k2 and "kr-silicon" or "silicon", "integrated-circuit", 10)
 else if rm.CheckIngredient("processing-unit", "silicon-wafer") then
   rm.ReplaceIngredient("processing-unit", "silicon-wafer", "integrated-circuit", 10)
 else
@@ -176,7 +176,7 @@ rm.AddIngredient("electric-foundry", "hv-power-regulator", 1)
 rm.AddIngredient("electric-foundry", "advanced-cable", 6)
 
 rm.AddIngredient("rocket-silo", "hv-power-regulator", mods["LunarLandings"] and 10 or 50)
-if not mods["Krastorio2"] then
+if not parts.k2 then
   rm.ReplaceIngredient("rocket-fuel", "light-oil", "nitric-acid", 10)
 end
 
@@ -245,7 +245,7 @@ require("gold.compat.freight")
 require("gold.compat.248k")
 
 -- What is ib_badge??
-if not mods["Krastorio2"] then
+if not parts.k2 then
   data.raw.item["nitric-acid-barrel"].ib_badge = "NA"
   data.raw.recipe["nitric-acid-barrel"].ib_badge = "NA"
   data.raw.recipe["nitric-acid-barrel"].ib_corner = "left-bottom"
@@ -259,6 +259,6 @@ if parts.aquaregia then
   data.raw.recipe["empty-aqua-regia-barrel"].ib_badge = "AR"
   data.raw.recipe["empty-aqua-regia-barrel"].ib_corner = "left-bottom"
 end
-if mods["Krastorio2"] then
+if parts.k2 then
   data.raw.item["potassium-nitrate"].ib_badge = "KN"
 end

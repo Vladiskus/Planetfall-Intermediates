@@ -1,7 +1,7 @@
 local parts = require("variable-parts")
 
 local stacksize_override = nil
-if mods["Krastorio2"] then
+if parts.k2 then
   --stacksize_override = tonumber(settings.startup["kr-stack-size"].value)
 end
 
@@ -193,7 +193,7 @@ if parts.nitinol then
       stack_size = 50
     }
   })
-  if not (parts.foundryEnabled or mods["Krastorio2"]) then
+  if not (parts.foundryEnabled or parts.k2) then
     data:extend({
       {
         type = "item",

@@ -42,7 +42,7 @@ data:extend({
     category = "advanced-crafting",
     enabled = false,
     energy_required = 1,
-    ingredients = tf.compilePrereqs{{type="item", name="plastic-bar", amount=1}, {type="item", name="copper-plate", amount=2}, parts.preferred({"ll-silicon", "silicon-wafer", mods["Krastorio2"] and "kr-silicon" or "silicon", "copper-cable"}, {2, 1, 2, 2})},
+    ingredients = tf.compilePrereqs{{type="item", name="plastic-bar", amount=1}, {type="item", name="copper-plate", amount=2}, parts.preferred({"ll-silicon", "silicon-wafer", parts.k2 and "kr-silicon" or "silicon", "copper-cable"}, {2, 1, 2, 2})},
     results = {{type="item", name="integrated-circuit",amount=2}},
   }
 }
@@ -60,7 +60,7 @@ if parts.aquaregia then
       order = "y04a", --this is where it belongs with se. otherwise it will be moved later.
       ingredients = tf.compilePrereqs{data.raw["fluid"]["hydrogen-chloride"] and {type="fluid", name="hydrogen-chloride", amount=100} or nil,
       data.raw["fluid"]["kr-hydrogen-chloride"] and {type="fluid", name="kr-hydrogen-chloride", amount=100} or nil,
-        {type="fluid", name=mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", amount=mods["Krastorio2"] and 100 or 160}},
+        {type="fluid", name=parts.k2 and "kr-nitric-acid" or "nitric-acid", amount=parts.k2 and 100 or 160}},
       results = {{type="fluid", name="aqua-regia", amount=200}},
       emissions_multiplier = 0.25,
       crafting_machine_tint = {
@@ -93,7 +93,7 @@ if parts.bz.gold and data.raw.item["silver-plate"] and rm.CheckIngredient("integ
       category = "advanced-crafting",
       enabled = false,
       energy_required = 1,
-      ingredients = tf.compilePrereqs{{type="item", name="plastic-bar", amount=1}, {type="item", name="silver-plate", amount=2}, parts.preferred({"ll-silicon", "silicon-wafer", mods["Krastorio2"] and "kr-silicon" or "silicon", "copper-cable"}, {2, 1, 2, 2})},
+      ingredients = tf.compilePrereqs{{type="item", name="plastic-bar", amount=1}, {type="item", name="silver-plate", amount=2}, parts.preferred({"ll-silicon", "silicon-wafer", parts.k2 and "kr-silicon" or "silicon", "copper-cable"}, {2, 1, 2, 2})},
       results = {{type="item", name="integrated-circuit",amount=2}},
     }
   })
@@ -111,7 +111,7 @@ if parts.bz.gold and data.raw.item["silver-plate"] and rm.CheckIngredient("integ
   }
 end
 
-if mods["Krastorio2"] then
+if parts.k2 then
   data:extend({
     {
       type = "recipe",
@@ -170,7 +170,7 @@ if mods["Krastorio2"] then
         enabled = false,
         energy_required = 3,
         ingredients = {{type="item", name="potassium-nitrate", amount=1}, {type="fluid", name="water", amount=30}},
-        results = {{type="fluid", name=mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", amount=5}},
+        results = {{type="fluid", name=parts.k2 and "kr-nitric-acid" or "nitric-acid", amount=5}},
         crafting_machine_tint = {
           primary = {0.75, 0.75, 1, 1},
           secondary = {1, 1, 1, 1},
@@ -203,7 +203,7 @@ else
 end
 
 if mods["space-exploration"] then
-  if mods["Krastorio2"] then
+  if parts.k2 then
     se_delivery_cannon_recipes["potassium-nitrate"] = {name= "potassium-nitrate"}
   else
     se_delivery_cannon_recipes["nitric-acid-barrel"] = {name= "nitric-acid-barrel"}

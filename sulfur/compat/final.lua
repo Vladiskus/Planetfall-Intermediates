@@ -5,18 +5,18 @@ local cu = require("category-utils")
 
 local gasket = "rubber"
 local gasket_cost = 2
-if parts.bz.carbon and not mods["BrassTacks-Updated"] then
+if parts.bz.carbon and not parts.brass then
   gasket = "gasket"
   gasket_cost = 1
 end
 
 if mods["space-exploration"] then
-  if not mods["BrassTacks-Updated"] then
+  if not parts.brass then
     rm.AddIngredient("se-vulcanite-rocket-fuel", gasket, gasket_cost)
   end
 end
 
-if not mods["Krastorio2"] and not mods["space-exploration"] then
+if not parts.k2 and not mods["space-exploration"] then
   cu.moveRecipe("sulfuric-acid", "advanced-chemicals", "a")
   cu.moveRecipe("nitric-acid", "advanced-chemicals", "b")
   cu.moveRecipe("nitric-acid-early", "advanced-chemicals", "b2")

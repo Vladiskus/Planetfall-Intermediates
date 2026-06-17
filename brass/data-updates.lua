@@ -51,7 +51,7 @@ if parts.brassExperimental then
     rm.AddIngredient("gearbox", "motor", 2)
   end end
 
-  if mods["Krastorio2"] then
+  if parts.k2 then
     rm.multiply("gearbox", 2, true, true, true)
     if mods["aai-industry"] then
       rm.RemoveIngredient("gearbox", "electric-motor", 1) --aai motors are expensive
@@ -61,14 +61,14 @@ if parts.brassExperimental then
   rm.AddIngredient("electric-mining-drill", "flywheel", 1)
 
   if mods["aai-industry"] then
-    if not mods["Krastorio2"] then -- inserter parts use AM
+    if not parts.k2 then -- inserter parts use AM
       rm.RemoveIngredient("burner-inserter", "iron-stick", 2)
       rm.AddIngredient("burner-inserter", "articulated-mechanism", 1)
     end
   else
     rm.ReplaceIngredient("inserter", "iron-plate", "articulated-mechanism", 1)
   end
-  if mods["Krastorio2"] and not mods["aai-industry"] then
+  if parts.k2 and not mods["aai-industry"] then
     rm.ReplaceIngredient("long-handed-inserter", "iron-plate", "articulated-mechanism", 2)
   else
     rm.ReplaceIngredient("long-handed-inserter", "iron-plate", "articulated-mechanism", 1)
@@ -77,11 +77,11 @@ if parts.brassExperimental then
   rm.RemoveIngredient("long-handed-inserter", "aluminum-plate", 1)
 
   --tf.addPrereq(mods["aai-industry"] and "basic-fluid-handling" or "fluid-handling", "hardened-hull")
-  if not mods["Krastorio2"] then
+  if not parts.k2 then
     rm.ReplaceIngredient("storage-tank", "steel-plate", "hardened-hull", 5)
     rm.RemoveIngredient("storage-tank", "bronze-plate", 10)
   end
-  if not (mods["Krastorio2"] or mods["galdocs-manufacturing"]) then
+  if not (parts.k2 or mods["galdocs-manufacturing"]) then
     rm.RemoveIngredient("pump", "bronze-plate", 2)
   end
 
@@ -169,7 +169,7 @@ if parts.brassExperimental then
   rm.AddIngredient("fast-transport-belt", "gearbox", 1)
 
   rm.RemoveIngredient("fast-underground-belt", "iron-gear-wheel", 40)
-  if not mods["Krastorio2"] then
+  if not parts.k2 then
     rm.AddIngredient("fast-underground-belt", "gearbox", 8)
   end
 
@@ -208,7 +208,7 @@ if parts.brassExperimental then
   rm.AddIngredient("express-transport-belt", "advanced-gearbox", 1)
 
   rm.RemoveIngredient("express-underground-belt", "iron-gear-wheel", 80)
-  if not mods["Krastorio2"] then
+  if not parts.k2 then
     rm.AddIngredient("express-underground-belt", "advanced-gearbox", 8)
   end
 
@@ -345,7 +345,7 @@ rm.AddIngredient("centrifuge", "bearing", 20)
 rm.AddIngredient("steam-turbine", "bearing", 5)
 
 if not parts.gyroscope then
-  local thegear = mods["Krastorio2"] and "kr-steel-gear-wheel" or "iron-gear-wheel"
+  local thegear = parts.k2 and "kr-steel-gear-wheel" or "iron-gear-wheel"
   if parts.nickel or mods["aai-industry"] then
     rm.AddIngredient("laser-turret", thegear, 5)
   else

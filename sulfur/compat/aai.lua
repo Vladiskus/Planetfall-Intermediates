@@ -5,15 +5,15 @@ local cu = require("category-utils")
 
 local gasket = "rubber"
 local gasket_cost = 2
-if parts.bz.carbon and not mods["BrassTacks-Updated"] then
+if parts.bz.carbon and not parts.brass then
   gasket = "gasket"
   gasket_cost = 1
 end
 
 local airseal = nil
 local airseal_cost = 1
-if not mods["IfNickel-Updated"] then
-  if mods["BrassTacks-Updated"] then
+if not parts.nickel then
+  if parts.brass then
     airseal = "airtight-seal"
   else
     airseal = gasket
@@ -44,13 +44,13 @@ if mods["space-exploration"] then
   rm.multiply("se-vitalic-acid", 4, true, true, true)
   rm.AddIngredient("se-vitalic-acid", "toluene", 1)
 
-  if not (mods["Krastorio2"] or mods["ThemTharHills-Updated"]) then
+  if not (parts.k2 or parts.gold) then
     rm.ReplaceProportional("se-cryonite-ion-exchange-beads", "sulfuric-acid", "nitric-acid", 1)
   end
 
-  if not mods["ThemTharHills-Updated"] then
-    rm.ReplaceIngredient("se-observation-frame-blank", "light-oil", mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", 10)
-    rm.ReplaceIngredient("se-observation-frame-blank-beryllium", "light-oil", mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", 10)
+  if not parts.gold then
+    rm.ReplaceIngredient("se-observation-frame-blank", "light-oil", parts.k2 and "kr-nitric-acid" or "nitric-acid", 10)
+    rm.ReplaceIngredient("se-observation-frame-blank-beryllium", "light-oil", parts.k2 and "kr-nitric-acid" or "nitric-acid", 10)
   end
 
   if airseal then
@@ -76,8 +76,8 @@ if mods["space-exploration"] then
   rm.AddIngredient("se-tensile-strength-data", "drive-belt", 1)
   rm.AddIngredient("se-compressive-strength-data", "rubber", 1)
 
-  if not mods["BrassTacks-Updated"] then
-    if not mods["IfNickel-Updated"] then
+  if not parts.brass then
+    if not parts.nickel then
       rm.AddIngredient("se-canister", gasket, 1)
     end
     rm.AddIngredient("se-space-pipe", gasket, 1)

@@ -2,9 +2,10 @@ local rm = require("recipe-modify")
 local cu = require("category-utils")
 local tf = require("techfuncs")
 local parts = require("variable-parts")
+local util = require("util")
 
 local allowed_recipes = {
-  mods["Krastorio2"] and "kr-nitric-acid" or nil,
+  parts.k2 and "kr-nitric-acid" or nil,
   "nitric-acid-early",
   "gunpowder",
   "potassium-nitrate",
@@ -48,7 +49,7 @@ if mods["space-exploration"] then
   table.insert(data.raw["assembling-machine"]["se-space-biochemical-laboratory"]["crafting_categories"], "basic-chemistry")
 end
 
-if mods["Krastorio2"] then
+if parts.k2 then
   rm.ReplaceIngredient("chemical-science-pack", "kr-glass", "explosives", 10)
   table.insert(data.raw["assembling-machine"]["kr-advanced-chemical-plant"]["crafting_categories"], "basic-chemistry")
 end
@@ -79,8 +80,8 @@ if data.raw["item-subgroup"]["chemistry"] then
 end
 
 --TTH + K2 already adds saltpeter byproducts
-if not (mods["ThemTharHills-Updated"] and mods["Krastorio2"]) then
-  if mods["Krastorio2"] then
+if not (parts.gold and parts.k2) then
+  if parts.k2 then
     rm.AddProductRaw("kr-sand", {type="item", name="potassium-nitrate", amount=1, probability=0.15})
   end
   if mods["aai-industry"] then
@@ -109,7 +110,7 @@ end
 
 --I am breaking all my own rules by defining a new recipe here.
 --In my defense I want to catch all the recipe changes.
-local plastic2 = table.deepcopy(data.raw.recipe["plastic-bar"])
+local plastic2 = util.table.deepcopy(data.raw.recipe["plastic-bar"])
 plastic2.name = "plastic-with-toluene"
 plastic2.icons = {
   {
@@ -131,10 +132,10 @@ if rm.CheckIngredient("plastic-with-toluene", "phenol") then
   --I should make a non-stupid way to add to existing products other than removing a negative amount
   --phenol is arguably more annoying to produce than toluene, so replacing one unit of it is the main benefit.
   --still, this is many ingredients into a high-throughput recipe, so you should be rewarded for a good design.
-  rm.RemoveProduct("plastic-with-toluene", "plastic-bar", mods["Krastorio2"] and -6 or -3)
+  rm.RemoveProduct("plastic-with-toluene", "plastic-bar", parts.k2 and -6 or -3)
   rm.RemoveProduct("plastic-with-toluene", "chemical-waste", -10)
 else
-  if mods["Krastorio2"] then
+  if parts.k2 then
     rm.ReplaceIngredient("plastic-with-toluene", "coal", "toluene", 2)
     rm.RemoveIngredient("plastic-with-toluene", "carbon-black", 2)
     rm.RemoveProduct("plastic-with-toluene", "plastic-bar", -2)
@@ -204,5 +205,21 @@ else
 end end
 rm.RemoveIngredient("shotgun-shell", "coal", 2)
 rm.AddIngredient("shotgun-shell", "gunpowder", 2)
+
+data:extend({
+  {
+    type = "recipe",
+    name = "sulfur-gas",
+    category = "basic-chemistry",
+    subgroup = "fluid-recipes",
+    energy_required = 1,
+    ingredients = {{type="fluid", name="gas", amount=30}},
+    results = {{type="item", name="sulfur", amount=2}},
+    main_product = "sulfur",
+    enabled = false,
+  }
+})
+
+tf.addRecipeUnlock("basic-chemistry", "sulfur-gas")
 
 require("sulfur.compat.final")

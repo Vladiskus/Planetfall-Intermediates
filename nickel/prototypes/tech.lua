@@ -18,16 +18,16 @@ data:extend({
         recipe = "flow-controller"
       } or nil
     },
-    prerequisites = tf.compilePrereqs{not (mods["Krastorio2"] or mods["MoreScience"]) and "logistic-science-pack" or nil, parts.nickelExperimental and "electronics" or nil, "steel-processing"},
+    prerequisites = tf.compilePrereqs{not (parts.k2 or mods["MoreScience"]) and "logistic-science-pack" or nil, parts.nickelExperimental and "electronics" or nil, "steel-processing"},
     unit =
     {
       count = 50,
       ingredients =
       tf.compilePrereqs{
         {"automation-science-pack", 1},
-        not (mods["Krastorio2"] or mods["MoreScience"]) and {"logistic-science-pack", 1} or nil
+        not (parts.k2 or mods["MoreScience"]) and {"logistic-science-pack", 1} or nil
       },
-      time = (mods["Krastorio2"] or mods["MoreScience"]) and 15 or 30
+      time = (parts.k2 or mods["MoreScience"]) and 15 or 30
     },
     order = "b"
   }

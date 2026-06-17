@@ -3,7 +3,7 @@ local tf = require("techfuncs")
 local rm = require("recipe-modify")
 local cu = require("category-utils")
 
-if mods["advanced-chemical-plant"] and not mods["Krastorio2"] then
+if mods["advanced-chemical-plant"] and not parts.k2 then
   if not (parts.brass or parts.nickel) then
     rm.AddIngredient("kr-advanced-chemical-plant", "electric-engine-unit", 4) --nobody can escape my insistence on shoving this item in every high end recipe. nobody!
   end
@@ -11,7 +11,7 @@ if mods["advanced-chemical-plant"] and not mods["Krastorio2"] then
   rm.ReplaceIngredient("kr-advanced-chemical-plant", "speed-module", "integrated-circuit", 32)
 end
 
-if mods["AdvancedAssemblyMachineStandalone"] and not mods["Krastorio2"] then
+if mods["AdvancedAssemblyMachineStandalone"] and not parts.k2 then
   rm.RemoveIngredient("assembling-machine-3", "electric-engine-unit", 99999) -- :O
   if parts.experimental then
     rm.AddIngredient("kr-advanced-assembling-machine", "hardened-hull", 12)
@@ -19,13 +19,13 @@ if mods["AdvancedAssemblyMachineStandalone"] and not mods["Krastorio2"] then
 end
 
 if mods["advanced-centrifuge"] then
-  if not mods["Krastorio2"] then
+  if not parts.k2 then
     --K2's ECU costs power regulators.
     rm.ReplaceIngredient("k11-advanced-centrifuge", "processing-unit", "hv-power-regulator", 10)
   end
 end
 
-if mods["Krastorio2"] then
+if parts.k2 then
   rm.RemoveIngredient("kr-energy-control-unit", "kr-electronic-components", 9)
   rm.AddIngredient("kr-energy-control-unit", "hv-power-regulator", 1)
 

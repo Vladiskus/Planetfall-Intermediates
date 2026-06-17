@@ -11,7 +11,7 @@ if parts.nickelExperimental then
     tf.addRecipeUnlock("mechanical-engineering", "motorized-articulator")
   end
   
-  if mods["Krastorio2"] then
+  if parts.k2 then
     --blue circuits produced in pairs
     rm.AddIngredient("processing-unit", "cooling-fan", 2)
   else
@@ -58,7 +58,7 @@ if parts.nickelExperimental then
   rm.AddIngredient("fast-splitter", "motorized-articulator", 1)
   rm.AddIngredient("fast-transport-belt-beltbox", "motorized-articulator", 4)
 
-  if mods["Krastorio2"] then
+  if parts.k2 then
     rm.AddIngredient("bulk-inserter", "motorized-articulator", 2)
   else
     rm.AddIngredient("bulk-inserter", "motorized-articulator", 5)
@@ -202,7 +202,7 @@ if not parts.aai then
   rm.AddIngredient("pump", parts.motor, 1)
 end
 
-if mods["Krastorio2"] and not mods["aai-industry"] then
+if parts.k2 and not mods["aai-industry"] then
   rm.AddIngredient("long-handed-inserter", parts.motor, 1)
   rm.AddIngredient("fast-inserter", parts.motor, 2)
 else

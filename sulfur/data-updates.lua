@@ -3,7 +3,7 @@ local parts = require("variable-parts")
 local tf = require("techfuncs")
 
 if parts.waste then
-  rm.AddProductRaw("sulfur", {type="fluid", name="chemical-waste", amount=mods["Krastorio2"] and 30 or 15})
+  rm.AddProductRaw("sulfur", {type="fluid", name="chemical-waste", amount=parts.k2 and 30 or 15})
 
   local plastic_toxic = 15
   if rm.CheckIngredient("plastic-bar", "phenol") then
@@ -13,18 +13,18 @@ if parts.waste then
     plastic_toxic = plastic_toxic + 15
   end
   rm.AddProductRaw("plastic-bar", {type="fluid", name="chemical-waste", amount=plastic_toxic})
-  if mods["ThemTharHills-Updated"] then
+  if parts.goldExternal then
     if not rm.CheckIngredient("integrated-circuit", "silicon-wafer") then
       rm.AddProductRaw("integrated-circuit", {type="fluid", name="depleted-acid", amount=1})
       if data.raw.recipe["integrated-circuit-silver"] then
         rm.AddProductRaw("integrated-circuit-silver", {type="fluid", name="depleted-acid", amount=1})
       end
     end
-    rm.AddProductRaw("gold-powder", {type="fluid", name="depleted-acid", amount=mods["Krastorio2"] and 20 or 10})
+    rm.AddProductRaw("gold-powder", {type="fluid", name="depleted-acid", amount=parts.k2 and 20 or 10})
     if parts.bz.gold then
       rm.AddProductRaw("cpu", {type="fluid", name="depleted-acid", amount=50})
     else
-      rm.AddProductRaw("processing-unit", {type="fluid", name="depleted-acid", amount=mods["Krastorio2"] and 10 or 5})
+      rm.AddProductRaw("processing-unit", {type="fluid", name="depleted-acid", amount=parts.k2 and 10 or 5})
     end
     rm.AddProductRaw("silicon-wafer", {type="fluid", name="depleted-acid", amount=20})
     rm.AddProductRaw("trace-gold-from-copper", {type="fluid", name="depleted-acid", amount=30})
@@ -32,7 +32,7 @@ if parts.waste then
     if parts.bz.gold then
       rm.AddProductRaw("cpu", {type="fluid", name="chemical-waste", amount=50})
     else
-      rm.AddProductRaw("processing-unit", {type="fluid", name="chemical-waste", amount=mods["Krastorio2"] and 10 or 5})
+      rm.AddProductRaw("processing-unit", {type="fluid", name="chemical-waste", amount=parts.k2 and 10 or 5})
     end
     rm.AddProductRaw("silicon-wafer", {type="fluid", name="chemical-waste", amount=20})
   end
@@ -48,13 +48,10 @@ if parts.waste then
     rm.AddProductRaw("fullerenes", {type="fluid", name="chemical-waste", amount=20})
     rm.AddProductRaw("nanotubes", {type="fluid", name=parts.acidwaste, amount=1})
     rm.RemoveProduct("nanotubes", "kr-dirty-water", 99999)
-    rm.AddProductRaw("carbon-black", {type="fluid", name="chemical-waste", amount=mods["Krastorio2"] and 10 or 5})
-    rm.AddProductRaw("graphite-carbon-black", {type="fluid", name="chemical-waste", amount=mods["Krastorio2"] and 30 or 15})
+    rm.AddProductRaw("carbon-black", {type="fluid", name="chemical-waste", amount=parts.k2 and 10 or 5})
+    rm.AddProductRaw("graphite-carbon-black", {type="fluid", name="chemical-waste", amount=parts.k2 and 30 or 15})
   end
 end
-rm.RemoveProduct("sulfur", "sulfur", 1)
-tf.removeRecipeUnlock("sulfur-processing", "sulfur")
-tf.addRecipeUnlock("advanced-oil-processing", "sulfur")
 
 if rm.CheckIngredient("chemical-plant", "stone-brick") then
   rm.AddIngredient("basic-chemical-plant", "stone-brick", 5)
@@ -69,21 +66,14 @@ end
 rm.ReplaceProportional("chemical-plant", "pipe", "basic-chemical-plant", 1/5)
 rm.ReplaceProportional("oil-refinery", "pipe", "basic-chemical-plant", 1/5)
 
-tf.removePrereq("sulfur-processing", "oil-processing")
 --rocketry no longer needs oil but flammables depending on oil makes flavor-sense
-if mods["Krastorio2"] then
-  tf.addPrereq("sulfur-processing", "logistic-science-pack")
-  tf.addPrereq("sulfur-processing", "kr-fluids-chemistry")
-else
-  tf.addPrereq("sulfur-processing", "electric-chemical-plant")
-  if parts.bz.chlorine then
-    tf.removePrereq("chlorine-processing", "fluid-handling")
-    tf.addPrereq("chlorine-processing", "electric-chemical-plant")
-  end
+if not parts.k2 and parts.bz.chlorine then
+  tf.removePrereq("chlorine-processing", "fluid-handling")
+  tf.addPrereq("chlorine-processing", "electric-chemical-plant")
 end
 
 if parts.coke_tol then
-  if mods["Krastorio2"] then
+  if parts.k2 then
     rm.AddProductRaw("coke", {type="item", name="toluene", amount=1, probability=0.6})
     rm.AddProductRaw("phenol", {type="item", name="toluene", amount=1, probability=0.6})
   else
@@ -119,7 +109,7 @@ else
   rm.RemoveIngredient("explosives", "water", 99999)
   rm.RemoveIngredient("explosives", "sulfur", 99999)
   rm.AddIngredient("explosives", "sulfuric-acid", 10*boom_factor)
-  rm.AddIngredient("explosives", mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", 10*boom_factor)
+  rm.AddIngredient("explosives", parts.k2 and "kr-nitric-acid" or "nitric-acid", 10*boom_factor)
   rm.ReplaceProportional("explosives", "coal", "toluene", 1)
   if parts.waste then
     rm.AddProductRaw("explosives", {type="fluid", name="chemical-waste", amount=30*boom_factor})
@@ -132,7 +122,7 @@ tf.addPrereq("concrete", "toluene-production")
 rm.ReplaceIngredient("concrete", "iron-ore", "toluene", 1)
 rm.RemoveIngredient("concrete", "iron-stick", 99999)
 
-tf.addPrereq(mods["Krastorio2"] and "kr-fuel" or "flammables", "toluene-production")
+tf.addPrereq(parts.k2 and "kr-fuel" or "flammables", "toluene-production")
 tf.removeRecipeUnlock("oil-processing", "solid-fuel-from-petroleum-gas")
 tf.addRecipeUnlock("flammables", "solid-fuel-from-petroleum-gas") --this should just be vanilla tbh. why does the flammables tech exist.
 
@@ -183,7 +173,7 @@ if data.raw.item["machining-tool"] then
   --bz also makes steel an annoying hassle
 end
 
-tf.addRecipeUnlock("sulfur-processing", mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid")
+tf.addRecipeUnlock("sulfur-processing", parts.k2 and "kr-nitric-acid" or "nitric-acid")
 
 tf.addPrereq("electric-energy-distribution-1", "rubber")
 rm.AddIngredient("medium-electric-pole", "rubber", 1)
@@ -196,16 +186,16 @@ else
   rm.ReplaceIngredient("engine-unit", "iron-gear-wheel", "drive-belt", 1)
 end
 
-if mods["ThemTharHills-Updated"] then
+if parts.gold then
   tf.addPrereq("high-voltage-equipment", "rubber")
   rm.ReplaceProportional("advanced-cable", "plastic-bar", "rubber", 1)
   tf.removeRecipeUnlock("gold-processing", "nitric-acid-early")
-  tf.removeRecipeUnlock("gold-processing", mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid")
+  tf.removeRecipeUnlock("gold-processing", parts.k2 and "kr-nitric-acid" or "nitric-acid")
 else
   rm.AddIngredient("substation", "rubber", 10)
 end
 
-if not mods["Krastorio2"] then
+if not parts.k2 then
   tf.removeRecipeUnlock("oil-processing", "chemical-plant")
   tf.removeRecipeUnlock(mods["aai-industry"] and "basic-fluid-handling" or "fluid-handling", "chemical-plant") --bzchlorine
   tf.addPrereq("oil-processing", "electric-chemical-plant")
@@ -214,7 +204,7 @@ end
 --nickel means valves in chemical plants and such
 local gasket_item = "rubber"
 local gasket_ratio = 2
-if mods["BrassTacks-Updated"] then
+if parts.brass then
   gasket_item = "airtight-seal"
   gasket_ratio = 1
 else if parts.bz.carbon then
@@ -223,7 +213,7 @@ else if parts.bz.carbon then
   tf.addRecipeUnlock("rubber", "gasket")
 end end
 
-if not mods["BrassTacks-Updated"] then
+if not parts.brass then
   --airtight seal item does not exist, add gaskets or rubber as relevant
   rm.ReplaceIngredient("pump", "graphite", gasket_item, 2)
   rm.RemoveIngredient("flamethrower-ammo", "steel-plate", 1)
@@ -233,9 +223,9 @@ if not mods["BrassTacks-Updated"] then
   end
 end
 
-if mods["IfNickel-Updated"] then
+if parts.nickel then
   tf.addPrereq("valves", "rubber")
-  if not mods["BrassTacks-Updated"] then
+  if not parts.brass then
     if parts.bz.carbon then
       rm.ReplaceProportional("invar-valve", "graphite", gasket_item, gasket_ratio/2)
     else
@@ -267,9 +257,8 @@ if mods["MoreScience"] then
   rm.RemoveIngredient("logistic-science-fluid", "purified-water", 99999)
   rm.SetCategory("military-science-fluid", "basic-chemistry")
   rm.RemoveIngredient("military-science-fluid", "purified-water", 99999)
-  tf.removePrereq("sulfur-processing", "sulfur")
 
-  if mods["Krastorio2"] then
+  if parts.k2 then
     tf.addPrereq("electric-power-science-pack", "kr-fluids-chemistry")
     tf.addPrereq("advanced-automation-science-pack", "kr-fluids-chemistry")
   else
@@ -281,7 +270,7 @@ if mods["MoreScience"] then
   tf.addSciencePack("byproduct-disposal", "advanced-automation-science-pack")
 end
 
-if mods["Krastorio2"] then
+if parts.k2 then
   rm.ReplaceIngredient("kr-fertilizer", "kr-biomass", "potassium-nitrate", 1)
   rm.ReplaceProportional("kr-biter-research-data", "coke", "gunpowder", 2)
 else
@@ -300,16 +289,16 @@ rm.AddIngredient("car", "rubber", 10)
 rm.AddIngredient("express-transport-belt", "drive-belt", 1)
 rm.AddIngredient("express-splitter", "drive-belt", 2)
 
-if not mods["Krastorio2"] then
+if not parts.k2 then
   rm.AddIngredient("fast-underground-belt", "rubber", 8)
   rm.AddIngredient("express-underground-belt", "drive-belt", 8)
 end
 
-if not mods["Krastorio2"] and not mods["ThemTharHills-Updated"] then
+if not parts.k2 and not parts.gold then
   rm.ReplaceIngredient("rocket-fuel", "light-oil", "nitric-acid", 10)
 end
 
-if mods["BrassTacks-Updated"] and not mods["IfNickel-Updated"] then
+if parts.brass and not parts.nickel then
   tf.removeRecipeUnlock(mods["aai-industry"] and "basic-fluid-handling" or "fluid-handling", "airtight-seal")
   tf.addRecipeUnlock("rubber", "airtight-seal")
   tf.addPrereq("fluid-handling", "rubber")
@@ -319,7 +308,7 @@ if mods["LunarLandings"] then
   rm.AddIngredient("ll-lunar-foundation", "toluene", 1)
   rm.AddIngredient("ll-astrocrystal-processing", "toluene", 1)
 
-  --if not mods["ThemTharHills-Updated"] then
+  --if not parts.gold then
     --rm.AddIngredient("ll-rich-moon-rock-processing", "nitric-acid", 25, 25)
   --end
 
@@ -334,7 +323,7 @@ if mods["LunarLandings"] then
     tf.addRecipeUnlock("ll-steam-condenser", "waste-treatment-water-recovery")
     tf.addRecipeUnlock("ll-quantum-resource-processing", "astral-waste-treatment")
 
-    if mods["ThemTharHills-Updated"] then
+    if parts.gold then
       rm.RemoveProduct("astral-waste-treatment", "petroleum-gas", 25)
       rm.AddProductRaw("astral-waste-treatment", {type="fluid", name="depleted-acid", amount=50})
     end
@@ -351,7 +340,7 @@ require("sulfur.compat.renai")
 require("sulfur.compat.freight")
 require("sulfur.compat.bio")
 
-if not mods["Krastorio2"] then
+if not parts.k2 then
   data.raw.item["nitric-acid-barrel"].ib_badge = "NA"
   data.raw.recipe["nitric-acid-barrel"].ib_badge = "NA"
   data.raw.recipe["nitric-acid-barrel"].ib_corner = "left-bottom"
@@ -371,7 +360,7 @@ if parts.waste then
   data.raw.recipe["chemical-waste-barrel"].ib_corner = "left-bottom"
   data.raw.recipe["empty-chemical-waste-barrel"].ib_badge = "CW"
   data.raw.recipe["empty-chemical-waste-barrel"].ib_corner = "left-bottom"
-  if mods["ThemTharHills-Updated"] then
+  if parts.goldExternal then
     data.raw.item["depleted-acid-barrel"].ib_badge = "DA"
     data.raw.recipe["depleted-acid-barrel"].ib_badge = "DA"
     data.raw.recipe["depleted-acid-barrel"].ib_corner = "left-bottom"

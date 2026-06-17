@@ -12,7 +12,6 @@
         "assembler3pipepictures",
         "pipecoverspictures",
         "assembler2pipepictures",
-        "defines",
-        "deepcopy"
+        "defines"
     ]
 }

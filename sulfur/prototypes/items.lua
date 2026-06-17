@@ -1,7 +1,7 @@
 local parts = require("variable-parts")
 
 local stacksize_override = nil
-if mods["Krastorio2"] then
+if parts.k2 then
   --stacksize_override = tonumber(settings.startup["kr-stack-size"].value)
 end
 
@@ -32,7 +32,7 @@ data:extend({
     icon_size = 64,
     subgroup = mods["space-exploration"] and "chemical" or "raw-material",
     order = "gb",
-    stack_size = stacksize_override or 100
+    stack_size = 200
   },
   {
     type = "item",
@@ -84,7 +84,7 @@ if parts.waste then
       order = "ad"
     }
   })
-  if mods["ThemTharHills-Updated"] then
+  if parts.goldExternal then
     data:extend({
       {
         type = "fluid",
@@ -116,7 +116,7 @@ if parts.waste then
   end
 end
 
-if not mods["Krastorio2"] then
+if not parts.k2 then
   data:extend({
   {
     type = "fluid",
@@ -148,7 +148,7 @@ if parts.bz.gas then
   })
 end
 
-if parts.bz.carbon and not mods["BrassTacks-Updated"] then
+if parts.bz.carbon and not parts.brass then
   data:extend({
     {
       type = "item",

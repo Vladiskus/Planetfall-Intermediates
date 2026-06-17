@@ -1,7 +1,8 @@
 local rm = require("recipe-modify")
+local parts = require("variable-parts")
 
 local allowed_recipes = {
-  mods["Krastorio2"] and "nitric-acid-early" or "nitric-acid",
+  parts.k2 and "nitric-acid-early" or "nitric-acid",
   "integrated-circuit",
   "transceiver",
   "advanced-cable",

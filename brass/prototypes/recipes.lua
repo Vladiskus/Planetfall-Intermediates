@@ -10,7 +10,7 @@ for k, v in pairs(data.raw["technology"]) do
 end
 data.raw.recipe["iron-stick"].enabled = true
 
-if mods["Krastorio2"] then
+if parts.k2 then
   yield = 5
   cost = 10
   if mods["space-exploration"] then
@@ -27,7 +27,7 @@ data:extend({
     energy_required = 2.5,
     ingredients = {{type="item", name="iron-plate", amount=2}},
     results = {{type="item", name="bolted-flange", amount=1}},
-    enabled = not mods["Krastorio2"],
+    enabled = not parts.k2,
     lasermill = {helium=1, productivity=true}
   },
   {
@@ -140,7 +140,7 @@ if parts.brassExperimental then
       name = "gearbox",
       category = "crafting",
       energy_required = 3,
-      ingredients = {{type="item", name="steel-plate", amount=1}, {type="item", name="iron-gear-wheel", amount=(mods["Krastorio2"] and 8 or 10)}},
+      ingredients = {{type="item", name="steel-plate", amount=1}, {type="item", name="iron-gear-wheel", amount=(parts.k2 and 8 or 10)}},
       results = {{type="item", name="gearbox",amount=2}},
       enabled = false
     },
@@ -149,14 +149,14 @@ if parts.brassExperimental then
       name = "advanced-gearbox",
       category = "crafting-with-fluid",
       energy_required = 3,
-      ingredients = {{type="item", name="gearbox", amount=1}, {type="item", name="iron-gear-wheel", amount=(mods["Krastorio2"] and 4 or 5)}, 
+      ingredients = {{type="item", name="gearbox", amount=1}, {type="item", name="iron-gear-wheel", amount=(parts.k2 and 4 or 5)}, 
                      {type="item", name="bearing", amount=2}, {type="item", name="flywheel", amount=1}, {type="fluid", name="lubricant", amount=20}},
       results = {{type="item", name="advanced-gearbox", amount=1}},
       enabled = false
     }
   })
 
-  if mods["Krastorio2"] then
+  if parts.k2 then
     data:extend({
       {
         type = "recipe",
@@ -214,7 +214,7 @@ if parts.brassExperimental then
           },
          },
         energy_required = 48,
-        ingredients = {{type="item", name="se-iridium-plate", amount=1}, {type="item", name="iron-gear-wheel", amount=(mods["Krastorio2"] and 64 or 80)}, {type="item", name="electric-motor", amount=(mods["Krastorio2"] and 12 or 16)}},
+        ingredients = {{type="item", name="se-iridium-plate", amount=1}, {type="item", name="iron-gear-wheel", amount=(parts.k2 and 64 or 80)}, {type="item", name="electric-motor", amount=(parts.k2 and 12 or 16)}},
         results = {{type="item", name="gearbox",amount=16}},
         enabled = false,
         always_show_products = true,
@@ -257,7 +257,7 @@ if parts.brassExperimental then
         energy_required = 5,
         --preferred can't be used - ifnickel loads after this.
         ingredients = {{type="item", name="flywheel", amount=1}, {type="item", name="bearing", amount=2}, {type="item", name="advanced-circuit", amount=1}, 
-                       (mods["aai-industry"] and {type="item",name="electric-motor", amount=1}) or (parts.nickel and {type="item",name="motor", amount=1}) or (mods["Krastorio2"] and {type="item",name="kr-steel-gear-wheel", amount=1}) or {type="item",name="iron-gear-wheel", amount=2}},
+                       (mods["aai-industry"] and {type="item",name="electric-motor", amount=1}) or (parts.nickel and {type="item",name="motor", amount=1}) or (parts.k2 and {type="item",name="kr-steel-gear-wheel", amount=1}) or {type="item",name="iron-gear-wheel", amount=2}},
         results = {{type="item", name=parts.gyroscope, amount=1}},
         enabled = false
       }

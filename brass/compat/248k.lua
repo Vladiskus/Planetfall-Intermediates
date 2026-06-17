@@ -11,7 +11,7 @@ end
 if mods["248k-Redux"] then
   -- electric era
   if parts.brassExperimental then
-    rm.ReplaceIngredient("gearbox", "steel-plate", "el_ALK", mods["Krastorio2"] and 4 or 2)
+    rm.ReplaceIngredient("gearbox", "steel-plate", "el_ALK", parts.k2 and 4 or 2)
     rm.RemoveIngredient("fast-transport-belt", "el_ALK", 1)
     rm.RemoveIngredient("fast-splitter", "el_ALK", 3)
     rm.RemoveIngredient("fast-underground-belt", "el_ALK", 8)
@@ -53,7 +53,7 @@ if mods["248k-Redux"] then
 
   rm.AddIngredient("fi_empty_solution", advfitting, 1)
 
-  if mods["aai-industry"] or mods["ThemTharHills-Updated"] then
+  if mods["aai-industry"] or parts.gold then
     rm.ReplaceProportional("fi_crusher", "engine-unit", "electric-engine-unit", 0.67)
     rm.ReplaceProportional("fi_fiberer", "engine-unit", "electric-engine-unit", 0.67)
     rm.ReplaceProportional("fi_compound_machine", "engine-unit", "electric-engine-unit", 0.67)
@@ -85,7 +85,7 @@ if mods["248k-Redux"] then
     rm.AddIngredient("fu_turbine", "advanced-gearbox", 10)
   end
 
-  if mods["Krastorio2"] then
+  if parts.k2 then
     rm.RemoveIngredient("gr_wheel", "fu_iron", 99999)
     data.raw.recipe["gr_wheel"].category = "chemistry"
     rm.AddIngredient("gr_wheel", "fu_copper", 250)

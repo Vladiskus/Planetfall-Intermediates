@@ -51,7 +51,7 @@ data:extend({
           recipe = "toluene-wood"
         }
       },
-      prerequisites = {mods["Krastorio2"] and "kr-fluids-chemistry" or "electric-chemical-plant"},
+      prerequisites = {parts.k2 and "kr-fluids-chemistry" or "electric-chemical-plant"},
       unit = {
         count = 75,
         ingredients = {
@@ -101,7 +101,7 @@ data:extend({
   }
 })
 
-if not mods["Krastorio2"] then
+if not parts.k2 then
   data:extend({
     {
         type = "technology",
@@ -119,7 +119,7 @@ if not mods["Krastorio2"] then
             recipe = "chemical-plant"
           }
         },
-        prerequisites = tf.compilePrereqs{mods["IfNickel-Updated"] and "valves" or "rubber", data.raw.item["hardened-hull"] and "hardened-hull" or "steel-processing", not data.raw.item["hardened-hull"] and "logistic-science-pack" or nil, parts.bz.tungsten and "tungsten-processing" or nil},
+        prerequisites = tf.compilePrereqs{parts.nickel and "valves" or "rubber", data.raw.item["hardened-hull"] and "hardened-hull" or "steel-processing", not data.raw.item["hardened-hull"] and "logistic-science-pack" or nil, parts.bz.tungsten and "tungsten-processing" or nil},
         unit = {
           count = 50,
           ingredients = {
@@ -149,7 +149,7 @@ if parts.waste then
             type = "unlock-recipe",
             recipe = "advanced-waste-treatment"
           },
-          mods["ThemTharHills-Updated"] and {
+          parts.goldExternal and {
             type = "unlock-recipe",
             recipe = "depleted-acid-treatment"
           } or nil
@@ -164,7 +164,7 @@ if parts.waste then
           time = 30,
         }
     },
-    (not mods["Krastorio2"]) and { -- crusher can void solids
+    (not parts.k2) and { -- crusher can void solids
         type = "technology",
         name = "byproduct-disposal",
         icons = {

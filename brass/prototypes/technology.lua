@@ -59,16 +59,16 @@ if parts.brassExperimental then
           recipe = "hardened-hull"
         }
       },
-      prerequisites = techfuncs.compilePrereqs{not (mods["Krastorio2"] or mods["MoreScience"]) and "logistic-science-pack" or nil, "steel-processing", mods["galdocs-manufacturing"] and "gm-nickel-and-invar-machined-part-processing" or (mods["IfNickel-Updated"] and "invar-processing" or nil), not parts.foundryEnabled and "automation" or nil},
+      prerequisites = techfuncs.compilePrereqs{not (parts.k2 or mods["MoreScience"]) and "logistic-science-pack" or nil, "steel-processing", mods["galdocs-manufacturing"] and "gm-nickel-and-invar-machined-part-processing" or (parts.nickelExternal and "invar-processing" or nil), not parts.foundryEnabled and "automation" or nil},
       unit =
       {
         count = 50,
         ingredients =
         {
           {red_science, 1},
-          not (mods["Krastorio2"] or mods["MoreScience"]) and {green_science, 1} or nil
+          not (parts.k2 or mods["MoreScience"]) and {green_science, 1} or nil
         },
-        time = (mods["Krastorio2"] or mods["MoreScience"]) and 15 or 30
+        time = (parts.k2 or mods["MoreScience"]) and 15 or 30
       },
       order = "e"
     },

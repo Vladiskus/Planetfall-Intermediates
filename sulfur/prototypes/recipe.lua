@@ -159,7 +159,7 @@ data:extend({
     name = "nitric-acid-early",
     icons = {
       {
-        icon = mods["Krastorio2"] and "__Krastorio2Assets__/icons/fluids/nitric-acid.png" or "__Planetfall_Intermediates__/graphics/icons/nitric-acid.png",
+        icon = parts.k2 and "__Krastorio2Assets__/icons/fluids/nitric-acid.png" or "__Planetfall_Intermediates__/graphics/icons/nitric-acid.png",
         icon_size = 64,
         icon_mipmaps = 4,
       },
@@ -177,7 +177,7 @@ data:extend({
     energy_required = 1,
     allow_decomposition = false,
     ingredients = {{type="item", name="potassium-nitrate", amount=1}, {type="fluid", name="water", amount=30}},
-    results = {{type="fluid", name=mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", amount=5}},
+    results = {{type="fluid", name=parts.k2 and "kr-nitric-acid" or "nitric-acid", amount=5}},
     crafting_machine_tint = {
       primary = {0.75, 0.75, 1, 1},
       secondary = {1, 1, 1, 1},
@@ -187,7 +187,7 @@ data:extend({
   }
 })
 
-if parts.bz.carbon and not mods["BrassTacks-Updated"] then
+if parts.bz.carbon and not parts.brass then
   data:extend({
     {
       type = "recipe",
@@ -264,7 +264,7 @@ if parts.waste then
       }
     }
   })
-  if not mods["Krastorio2"] then
+  if not parts.k2 then
     data:extend({
       {
         type = "recipe",
@@ -476,7 +476,7 @@ if parts.waste then
   end
 end
 
-if not mods["Krastorio2"] then
+if not parts.k2 then
   data:extend({
     {
       type = "recipe",
@@ -487,8 +487,8 @@ if not mods["Krastorio2"] then
       subgroup = "fluid-recipes",
       order = "y04", --this is where it belongs with se. otherwise it will be moved later.
       ingredients = {{type="item", name="copper-plate", amount=1}, {type="item", name="potassium-nitrate", amount=1}, {type="fluid", name="water", amount=100}, {type="fluid", name="sulfuric-acid", amount=10}},
-      results = tf.compilePrereqs{{type="fluid", name=mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", amount=100}, parts.waste and {type="fluid", name="chemical-waste", amount=25} or nil},
-      main_product = mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid",
+      results = tf.compilePrereqs{{type="fluid", name=parts.k2 and "kr-nitric-acid" or "nitric-acid", amount=100}, parts.waste and {type="fluid", name="chemical-waste", amount=25} or nil},
+      main_product = parts.k2 and "kr-nitric-acid" or "nitric-acid",
       crafting_machine_tint = {
         primary = {0.5, 0.75, 1, 1},
         secondary = {1, 1, 1, 1},
@@ -507,7 +507,7 @@ if parts.bz.gas then
       category = "chemistry",
       enabled = false,
       energy_required = 1,
-      ingredients = {{type="fluid", name="sulfuric-acid", amount=10}, {type="fluid", name=mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", amount=10}, {type="item", name="toluene", amount=1}},
+      ingredients = {{type="fluid", name="sulfuric-acid", amount=10}, {type="fluid", name=parts.k2 and "kr-nitric-acid" or "nitric-acid", amount=10}, {type="item", name="toluene", amount=1}},
       results = tf.compilePrereqs{{type="item", name="tnt", amount=2}, parts.waste and {type="fluid", name="chemical-waste", amount=25} or nil},
       main_product = "tnt",
       crafting_machine_tint = {
@@ -520,7 +520,7 @@ if parts.bz.gas then
   })
 end
 
-if mods["Krastorio2"] and not mods["ThemTharHills-Updated"] then
+if parts.k2 and not parts.gold then
   data:extend({
     {
       type = "recipe",
@@ -556,7 +556,7 @@ if mods["Krastorio2"] and not mods["ThemTharHills-Updated"] then
   })
 end
 
-if parts.waste and mods["ThemTharHills-Updated"] then
+if parts.waste and parts.goldExternal then
   data:extend({
     {
       type = "recipe",
@@ -568,14 +568,14 @@ if parts.waste and mods["ThemTharHills-Updated"] then
           icon_mipmaps = 4,
         }
       },
-      category = mods["Krastorio2"] and "kr-fluid-filtration" or "chemistry",
+      category = parts.k2 and "kr-fluid-filtration" or "chemistry",
       subgroup = "waste-treatment",
       order = "c",
       allow_decomposition = false,
       enabled = false,
       energy_required = 5,
-      ingredients = tf.compilePrereqs{{type="fluid", name="depleted-acid", amount=150}, not mods["Krastorio2"] and {type="fluid", name="water", amount=50} or nil},
-      results = {{type="fluid", name="chemical-waste", amount=mods["Krastorio2"] and 149 or 199}, {type="item", name="gold-powder", amount=1}},
+      ingredients = tf.compilePrereqs{{type="fluid", name="depleted-acid", amount=150}, not parts.k2 and {type="fluid", name="water", amount=50} or nil},
+      results = {{type="fluid", name="chemical-waste", amount=parts.k2 and 149 or 199}, {type="item", name="gold-powder", amount=1}},
       emissions_multiplier = 1.5,
       crafting_machine_tint = {
         primary = {0, 0.6, 0.8, 1},
@@ -604,7 +604,7 @@ if parts.waste and mods["space-exploration"] then
           shift = {-8, -8}
         }
       },
-      category = mods["Krastorio2"] and "kr-fluid-filtration" or "chemistry",
+      category = parts.k2 and "kr-fluid-filtration" or "chemistry",
       subgroup = "waste-treatment",
       order = "k",
       enabled = false,
@@ -754,7 +754,7 @@ end
 if mods["space-exploration"] then
   se_delivery_cannon_recipes["potassium-nitrate"] = {name="potassium-nitrate"}
   se_delivery_cannon_recipes["rubber"] = {name="rubber"}
-  if not mods["Krastorio2"] then se_delivery_cannon_recipes["nitric-acid-barrel"] = {name="nitric-acid-barrel"} end
+  if not parts.k2 then se_delivery_cannon_recipes["nitric-acid-barrel"] = {name="nitric-acid-barrel"} end
   if data.raw.item["tnt"] then
     se_delivery_cannon_recipes["tnt"] = {name="tnt"}
   end

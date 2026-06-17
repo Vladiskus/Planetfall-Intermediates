@@ -7,7 +7,7 @@ if parts.bz.carbon or mods["BrimStuff-Updated"] then
   advfitting = "airtight-seal"
 end
 
-if mods["advanced-chemical-plant"] and not mods["Krastorio2"] then
+if mods["advanced-chemical-plant"] and not parts.k2 then
   if advfitting == "airtight-seal" and not parts.nickel then
     rm.AddIngredient("kr-advanced-chemical-plant", "airtight-seal", 32)
   end
@@ -19,7 +19,7 @@ if mods["advanced-chemical-plant"] and not mods["Krastorio2"] then
   rm.AddIngredient("kr-advanced-chemical-plant", "electric-engine-unit", 4) --nobody can escape my insistence on shoving this item in every high end recipe. nobody!
 end
 
-if mods["AdvancedAssemblyMachineStandalone"] and not mods["Krastorio2"] then
+if mods["AdvancedAssemblyMachineStandalone"] and not parts.k2 then
   rm.RemoveIngredient("assembling-machine-3", "electric-engine-unit", 99999) -- :O
   if parts.brassExperimental then
     rm.AddIngredient("kr-advanced-assembling-machine", "hardened-hull", 122)
@@ -34,7 +34,7 @@ if mods["advanced-centrifuge"] then
   end
 end
 
-if mods["Krastorio2"] then
+if parts.k2 then
     rm.RemoveIngredient("kr-steel-gear-wheel", "steel-plate", 1)
     if not rm.CheckIngredient("kr-steel-gear-wheel", "steel-plate") then
         rm.multiply("kr-steel-gear-wheel", 4, true, true, true)

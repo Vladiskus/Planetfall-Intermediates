@@ -4,7 +4,7 @@ local rm = require("recipe-modify")
 local cu = require("category-utils")
 
 --this gets changed between so do it last instead of in the main krastorio part
-if mods["Krastorio2"] then
+if parts.k2 then
   if mods["aai-industry"] then
     rm.AddProductRaw("sand", {type="item", name="potassium-nitrate", amount=1, probability=0.05})
   end
@@ -17,8 +17,8 @@ if mods["space-exploration"] then
   rm.ReplaceProportional("efficiency-module-3", "advanced-circuit", "integrated-circuit", 2)
   rm.ReplaceProportional("productivity-module-3", "advanced-circuit", "integrated-circuit", 2)
 
-  if rm.CheckIngredient("se-processing-unit-holmium", mods["Krastorio2"] and "kr-silicon" or "silicon") then
-    rm.ReplaceIngredient("se-processing-unit-holmium", mods["Krastorio2"] and "kr-silicon" or "silicon", "integrated-circuit", 5)
+  if rm.CheckIngredient("se-processing-unit-holmium", parts.k2 and "kr-silicon" or "silicon") then
+    rm.ReplaceIngredient("se-processing-unit-holmium", parts.k2 and "kr-silicon" or "silicon", "integrated-circuit", 5)
   else if rm.CheckIngredient("se-processing-unit-holmium", "silicon-wafer") then
     rm.ReplaceIngredient("se-processing-unit-holmium", "silicon-wafer", "integrated-circuit", 5)
   else
@@ -67,7 +67,7 @@ cu.moveItem("integrated-circuit", "generic-circuits", "h")
   cu.moveRecipe("solder", "generic-circuits", "a")
   cu.moveRecipe("silicon-wafer", "generic-circuits", "g")
 
-if mods["Krastorio2"] or parts.bz.gold or parts.bz.chlorine then
+if parts.k2 or parts.bz.gold or parts.bz.chlorine then
   cu.moveItem("solder", "fiddly-electrical-gubbins", "a")
   cu.moveItem("pcb-solder", "fiddly-electrical-gubbins", "ab")
   cu.moveItem("battery", "fiddly-electrical-gubbins", "c")
@@ -87,7 +87,7 @@ if mods["Krastorio2"] or parts.bz.gold or parts.bz.chlorine then
   cu.moveRecipe("cpu", "fiddly-electrical-gubbins", "h")
   cu.moveRecipe("cpu-holmium", "fiddly-electrical-gubbins", "i")
 
-  if not mods["IfNickel-Updated"] then
+  if not parts.nickel then
     cu.moveItem("spark-plug", "fiddly-electrical-gubbins", "b")
     cu.moveRecipe("spark-plug", "fiddly-electrical-gubbins", "b")
   end
@@ -105,7 +105,7 @@ end
 cu.moveItem("kr-energy-control-unit", "specialized-electronics", "g")
 cu.moveRecipe("solar-cell", "specialized-electronics", "a")
 
-if not mods["Krastorio2"] and not mods["space-exploration"] then
+if not parts.k2 and not mods["space-exploration"] then
   cu.moveRecipe("sulfuric-acid", "advanced-chemicals", "a")
   cu.moveRecipe("nitric-acid", "advanced-chemicals", "b")
   cu.moveRecipe("nitric-acid-early", "advanced-chemicals", "b2")

@@ -161,7 +161,7 @@ if mods["space-exploration"] then
 
       rm.ReplaceIngredient("se-tensile-strength-data", "steel-plate", "nitinol-plate", 1)
 
-      if mods["Krastorio2"] then
+      if parts.k2 then
         rm.AddIngredient("kr-fusion-reactor", "invar-valve", 100)
         rm.ReplaceIngredient("kr-advanced-transport-belt", "titanium-plate", "nitinol-mesh", 1)
         rm.AddIngredient("kr-advanced-splitter", "nitinol-mesh", 2)

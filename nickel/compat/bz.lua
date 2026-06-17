@@ -17,7 +17,7 @@ if parts.bz.tin and parts.nickelExperimental then
 
   if data.raw.item["tinned-cable"] then
     tf.addPrereq("valves", "tinned-cable")
-    if mods["Krastorio2"] or mods["MoreScience"] then
+    if parts.k2 or mods["MoreScience"] then
       tf.removeSciencePack("tinned-cable", "logistic-science-pack")
       tf.removePrereq("tinned-cable", "logistic-science-pack")
       if data.raw.technology["copper-processing"] then
@@ -50,7 +50,7 @@ if parts.bz.gold then
     rm.RemoveIngredient("chemical-plant", "silver-brazing-alloy", 99999)
   end end
 
-  if mods["ThemTharHills-Updated"] or not mods["space-exploration"] then
+  if parts.gold or not mods["space-exploration"] then
     --TTH handles allowing small amounts of gold/plat/pall on nauvis
     if parts.nickelExperimental then
       if rm.CheckIngredient("mainboard", "temperature-sensor") then
@@ -71,7 +71,7 @@ if parts.bz.gold then
 
   if data.raw.item["gimbaled-thruster"] then
     --rcu is getting a bit overcrowded and the temp sensor should be in the part of the rocket that might plausibly overheat anyway
-    if mods["space-exploration"] and mods["ThemTharHills-Updated"] then
+    if mods["space-exploration"] and parts.gold then
       rm.AddIngredient("gimbaled-thruster", "temperature-sensor", 1)
     else if not mods["space-exploration"] then
       rm.AddIngredient("gimbaled-thruster", "temperature-sensor", 2)

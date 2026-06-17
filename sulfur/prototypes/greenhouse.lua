@@ -215,7 +215,7 @@ data:extend({
     results = {{type="item", name="brimstuff-greenhouse", amount=1}},
     enabled = false,
     ingredients = tf.compilePrereqs{{type="item", name="iron-stick", amount=16}, {type="item", name="pipe", amount=5}, {type="item", name="stone-brick", amount=5}, 
-      parts.optionalIngredient(mods["Krastorio2"] and "kr-glass" or "glass", 10), parts.optionalIngredient("silver-brazing-alloy", 5)}
+      parts.optionalIngredient(parts.k2 and "kr-glass" or "glass", 10), parts.optionalIngredient("silver-brazing-alloy", 5)}
   },
   {
     type = "item-subgroup",
@@ -243,7 +243,7 @@ data:extend({
     energy_required = 1,
     results = {{type="fluid", name="fertilizer-slurry", amount=100}},
     enabled = false,
-    ingredients = {{type="fluid", name=mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", amount=25}, {type="item", name="wood", amount=1}, {type="item", name="potassium-nitrate", amount=1}},
+    ingredients = {{type="fluid", name=parts.k2 and "kr-nitric-acid" or "nitric-acid", amount=25}, {type="item", name="wood", amount=1}, {type="item", name="potassium-nitrate", amount=1}},
     crafting_machine_tint = {
       primary = {0, 0.6, 0.2, 1},
       secondary = {0, 1, 0, 1},

@@ -40,7 +40,7 @@ if parts.bz.gold then
   end
 end
 
-if parts.brassExperimental and parts.bz.tungsten and (not parts.nickel ) and (not mods["Krastorio2"]) then
+if parts.brassExperimental and parts.bz.tungsten and (not parts.nickel ) and (not parts.k2) then
   if data.raw.item["cuw"] then
     rm.ReplaceIngredient("hardened-hull", "iron-plate", "cuw", 2)
   else

@@ -2,7 +2,7 @@ local rm = require("recipe-modify")
 local tf = require("techfuncs")
 local parts = require("variable-parts")
 
-if mods["advanced-chemical-plant"] and not mods["Krastorio2"] then
+if mods["advanced-chemical-plant"] and not parts.k2 then
   if mods["space-exploration"] then
     rm.AddIngredient("kr-advanced-chemical-plant", "bioscrubber", 4) --they use valves/flowcontrollers and also why tf not
     if parts.nickelExperimental then
@@ -22,14 +22,14 @@ if mods["advanced-chemical-plant"] and not mods["Krastorio2"] then
   end
 end
 
-if mods["AdvancedAssemblyMachineStandalone"] and not mods["Krastorio2"] then
+if mods["AdvancedAssemblyMachineStandalone"] and not parts.k2 then
   rm.RemoveIngredient("assembling-machine-3", "electric-engine-unit", 99999) -- :O
   if parts.nickelExperimental then
     rm.AddIngredient("kr-advanced-assembling-machine", "cooling-fan", 6)
   end
 end
 
-if mods["Krastorio2"] then
+if parts.k2 then
   if parts.nickelExperimental then
     if not mods["space-exploration"] then
       --unreasonable for something that can only be placed in space

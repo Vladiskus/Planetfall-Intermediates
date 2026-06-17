@@ -10,7 +10,7 @@ if parts.waste then
 
   if parts.bz.chlorine then
     rm.AddProductRaw("hydrogen-chloride-salt", {type="fluid", name="chemical-waste", amount=10})
-    if mods["ThemTharHills-Updated"] then
+    if parts.gold then
       rm.AddProductRaw("ferric-chloride-hcl", {type="fluid", name="depleted-acid", amount=15})
     else
       rm.AddProductRaw("ferric-chloride-hcl", {type="fluid", name="chemical-waste", amount=40})
@@ -25,7 +25,7 @@ end
 
 if parts.bz.carbon then
   rm.AddIngredient("nanotubes", "toluene", 1)
-  if not mods["Krastorio2"] then
+  if not parts.k2 then
     rm.multiply("fullerenes", 2, true, true, true)
   end
   rm.AddIngredient("fullerenes", "toluene", 1)

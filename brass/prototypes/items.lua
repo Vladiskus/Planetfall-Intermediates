@@ -136,7 +136,7 @@ if parts.brassExperimental then
     }
   })
 
-  if mods["Krastorio2"] then
+  if parts.k2 then
     data:extend({
       {
         type = "item",
